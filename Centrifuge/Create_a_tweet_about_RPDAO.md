@@ -7,7 +7,7 @@
 
 ---
 
-📝 **Твоя цель** - рассказать в Твиттере о взаимодействии Red Planet с **одним из партнёрских проектов**: @osmosiszone, @NolusProtocol, @ChihuahuaChain, @madscientists_x, @DA0_DA0, @orchestra_labs, @cryptodungeonma.
+📝 **Твоя цель** - рассказать в Твиттере о взаимодействии Red Planet с **одним из партнёрских проектов**: @osmosiszone, @NolusProtocol, @neutron_org, @ChihuahuaChain, @madscientists_x, @DA0_DA0, @orchestra_labs, @cryptodungeonma.
 
 ⚠️ Но будь внимателен - простые крики «залетай в NFT» - не работают на этой высоте. Тебе нужно **написать осмысленный, связный твит**, который покажет, **почему эта связка важна**, в чём её сила, ценность и миссия.
 
