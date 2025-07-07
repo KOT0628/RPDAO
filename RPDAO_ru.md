@@ -63,7 +63,7 @@ https://youtu.be/9oaA9HYo5eU
 
 #### *2. NFT коллекция: [«Red Planet NFT»](https://www.stargaze.zone/m/stars1vk8fmh259xr4yz9qqh4x3xfrck80nvl9fu6d9gcaqjksx94xc6nqxzea0t/tokens) (Stargaze, [open mint](https://www.stargaze.zone/l/stars1vk8fmh259xr4yz9qqh4x3xfrck80nvl9fu6d9gcaqjksx94xc6nqxzea0t))*
 
-https://www.stargaze.zone/m/stars1lxl4hrx2cfl0qujl0xyz0jtlzftn3y84rzyn3jgshfznjmvfplzs6pplac/tokens
+![Title_collection](https://github.com/user-attachments/assets/d74a17f3-906e-4859-8879-3ecd778bcad0)
 
 Масштабируемый инструмент майнинга, основанный на комбинированной вычислительной модели:
 
