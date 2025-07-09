@@ -3,7 +3,7 @@
 Этот бот автоматически:
 - отправляет изображение с текущей ценой Bitcoin в Telegram-чат Red Planet DAO каждые 4 часа,
 - обрабатывает команды `/price`, `/rpdao_trivia`, `/roll`, `/reroll`, `/score`, `/gm`, `/gn`, `/start_roll` / `/stop_roll`, `/reroll_on`/ `/reroll_off`, `/rpdao_trivia_off`
-- пересылает все сообщения и изображения из Telegram в Discord.
+- пересылает все сообщения и изображения из Telegram в Discord, с автоматическим переводом на английский язык.
 
 ---
 
