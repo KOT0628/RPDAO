@@ -86,11 +86,11 @@ DISCORD_AVATAR_URL=your_avatar_url
 DEEPL_API_KEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:fx
 ```
 
-4. Помести в корень проекта файлы:
+4. Вспомогательные файлы:
 
  - `background.jpg`          # для /price
- - `morning.jpg`             # для /gm
- - `night.jpg`               # для /gn
+ - `morning1-6.jpg`          # для /gm
+ - `night1-6.jpg`            # для /gn
  - `SpicyRice-Regular.ttf`   # шрифт
  - `trivia_questions.txt`    # вопросы для викторины
 
@@ -99,7 +99,7 @@ DEEPL_API_KEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:fx
 ## 🚀 Запуск
 
 ```bash
-python btc_bot.py
+python main.py
 ```
 
 Бот начнёт работу и будет:
