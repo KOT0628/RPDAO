@@ -113,25 +113,53 @@ python btc_bot.py
 ## 🗂 Структура проекта
 
 ```
-project/
-├── backgrounds/
-│   ├── morning/              # Фоны для доброго утра
-│   │   ├── 1.jpg
-│   │   ├── 2.jpg
-│   │   └── 3.jpg
-│   └── night/                # Фоны для спокойной ночи
-│       ├── 1.jpg
-│       ├── 2.jpg
-│       └── 3.jpg
-├── background.jpg            # Фон для BTC
-├── SpicyRice-Regular.ttf     # Шрифт
-├── btc_bot.py                # Основной код бота
-├── translate.py              # Модуль перевода на английский
-├── .env                      # Переменные окружения
-├── logs.txt                  # Логи
-├── scores.json               # Таблица лидеров (автоматически)
-├── trivia_questions.txt      # Вопросы для викторины
-└── requirements.txt          # Зависимости
+RPDAO-TG-bot/
+│
+├── __init__.py
+├── main.py                            # Главная точка входа (run_bot)
+│
+├── config/                            # Конфигурации
+│   ├── __init__.py
+│   └── settings.py                    # Загрузка переменных окружения
+│
+├── utils/                             # Вспомогательные функции
+│   ├── __init__.py
+│   ├── logger.py                      # Настройка логирования
+│   ├── scheduler.py                   # Планировщик schedule
+│   ├── image.py                       # Генерация изображений
+│   ├── helpers.py                     # Экранирование, удаление сообщений и др.
+│   ├── check_admin.py                 # Проверка прав администратора
+│   ├── scoreboard.py                  # Формирование Leaderboard
+│   └── translate.py                   # Универсальный переводчик
+│
+├── features/                          # Основной функционал
+│   ├── game/                          # Игры в чате Red Planet DAO
+│   │   ├── __init__.py 
+│   │   ├── trivia.py                  # Логика викторины
+│   │   ├── roll.py                    # Логика Roll,night/
+│   │   └── reroll.py                  # Логика Reroll
+│   ├── __init__.py
+│   ├── price.py                       # Команда /price и изображение BTC
+│   ├── gm_gn.py                       # Команды /gm и /gn
+│   ├── score.py                       # Логика Leaderboard
+│   └── discord_bridge.py              # Пересылка сообщений и фото в Discord
+│
+├── assets/
+│   ├── backgrounds/
+│   │   ├── morning/                   # Фоны для /gm
+│   │   ├── night/                     # Фоны для /gn
+│   │   └── background.jpg             # Фон для /price
+│   └── fonts/
+│       └── SpicyRice-Regular.ttf      # Шрифт
+│
+├── data/
+│   ├── scores.json                    # Таблица очков
+│   ├── trivia_questions.txt           # Вопросы для викторины
+│   ├── translate.txt                  # Файл логов переводчика
+│   └── logs.txt                       # Файл логов
+│
+└── requirements.txt                   # Список зависимостей
+
 ```
 
 ---
