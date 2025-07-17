@@ -135,6 +135,7 @@ RPDAO-TG-bot/
 ├── features/                          # Основной функционал
 │   ├── game/                          # Игры в чате Red Planet DAO
 │   │   ├── __init__.py 
+│   │   ├── game_state.py              # Модуль состояния режима Reroll
 │   │   ├── trivia.py                  # Логика викторины
 │   │   ├── roll.py                    # Логика Roll,night/
 │   │   └── reroll.py                  # Логика Reroll
