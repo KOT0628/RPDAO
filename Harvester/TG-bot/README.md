@@ -48,14 +48,7 @@
 
 ## 🔧 Установка
 
-1. Клонируй репозиторий или скачай скрипт:
-
-```bash
-git clone https://github.com/KOT0628/RPDAO-TG-bot.git
-cd rpdao-btc-bot
-```
-
-2. Установи зависимости:
+1. Установи зависимости:
 
 ```bash
 pip install -r requirements.txt
@@ -76,7 +69,7 @@ deep-translator==1.11.4
 langdetect==1.0.9
 ```
 
-3. Создай `.env` файл со следующими переменными:
+2. Создай `.env` файл со следующими переменными:
 
 ```env
 TELEGRAM_TOKEN=your_telegram_bot_token
@@ -86,7 +79,7 @@ DISCORD_AVATAR_URL=your_avatar_url
 DEEPL_API_KEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:fx
 ```
 
-4. Вспомогательные файлы:
+3. Вспомогательные файлы:
 
  - `background.jpg`          # для /price
  - `morning1-6.jpg`          # для /gm
