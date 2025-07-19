@@ -130,7 +130,7 @@ RPDAO-TG-bot/
 │   │   ├── __init__.py 
 │   │   ├── game_state.py              # Модуль состояния режима Reroll
 │   │   ├── trivia.py                  # Логика викторины
-│   │   ├── roll.py                    # Логика Roll,night/
+│   │   ├── roll.py                    # Логика Roll
 │   │   └── reroll.py                  # Логика Reroll
 │   ├── __init__.py
 │   ├── price.py                       # Команда /price и изображение BTC
