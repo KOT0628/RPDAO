@@ -50,13 +50,13 @@ RU_NUMBERS = {
 }
 
 # == Последняя цена BTC (Discord) ==
-LAST_PRICE = "data/last_price.txt"
+LAST_PRICE = "data/discord/last_price.txt"
 
 # == Последний отправленный твит (Discord) ==
 LAST_TWEET_FILE = "data/twitter/last_tweet.txt"
 
 # == Маппинг сообщений (Discord) ==
-MAP_FILE = "data/message_map.json"
+MAP_FILE = "data/discord/message_map.json"
 
 # == Генерация изображений ==
 BACKGROUND_PATH = "assets/backgrounds/background.jpg"
