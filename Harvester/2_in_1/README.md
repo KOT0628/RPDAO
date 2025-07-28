@@ -201,24 +201,29 @@ RPDAO-Harvester_v2.0/
 │   └── trivia.txt                     # Фон подменю "Игровой зоны"
 │
 ├── data/
+│   ├── discord/
+│   │   ├── last_price.txt             # Последняя цена $BTC
+│   │   └── message_map.json           # Файл маппинга сообщений
+│   ├── game/
+│   │   └── trivia_questions.txt       # Вопросы для викторины
+│   ├── img_output/
+│   │   ├── btc_price_output.jpg       # Сгенерированное изображение с ценой $BTC
+│   │   ├── gm_output.jpg              # Сгенерированное изображение "Доброе утро"
+│   │   └── gn_output.jpg              # Сгенерированное изображение "Доброй ночи"
+│   ├── leadeboard/
+│   │   ├── crimson_scores.json        # Таблица лидеров Crimson Envoy
+│   │   └── scores.json                # Таблица лидеров "Игровой зоны"
 │   ├── logs/
 │   │   ├── logs.log                   # Файл логов
 │   │   └── translate.log              # Файл логов переводчика
-│   ├── btc_price_output.jpg           # Сгенерированное изображение с ценой $BTC
-│   ├── crimson_scores.json            # Таблица лидеров Crimson Envoy
-│   ├── gm_output.jpg                  # Сгенерированное изображение "Доброе утро"
-│   ├── gn_output.jpg                  # Сгенерированное изображение "Доброй ночи"
-│   ├── google_key.json                # GoogleCloud Translate API ключ
-│   ├── last_price.txt                 # Последняя цена $BTC
-│   ├── last_tweet.txt                 # Последний ретранслируемый твит
-│   ├── last_twitter_check.txt         # Содержит время последней успешной проверки Twitter
-│   ├── message_map.json               # Файл маппинга сообщений
-│   ├── scores.json                    # Таблица лидеров "Игровой зоны"
-│   ├── trivia_questions.txt           # Вопросы для викторины
-│   └── twitter_block.txt              # Содержит время окончания временной блокировки API
+│   ├── secrets/
+│   │   └── google_key.json            # GoogleCloud Translate API ключ
+│   └── twitter/
+│       ├── last_tweet.txt             # Последний ретранслируемый твит
+│       ├── last_twitter_check.txt     # Содержит время последней успешной проверки Twitter
+│       └── twitter_block.txt          # Содержит время окончания временной блокировки API
 │
 └── requirements.txt                   # Список зависимостей
-
 ```
 **2. 🌐 Установка виртуального окружения для Windows**
 
@@ -340,7 +345,7 @@ DISCORD_WEBHOOK_URL=discord_webhook_url
 
 # Deepl (перевод)
 DEEPL_API_KEY=deepl_api_key
-GOOGLE_APPLICATION_CREDENTIALS=data/google_key.json
+GOOGLE_APPLICATION_CREDENTIALS=data/secrets/google_key.json
 
 # Прочее
 DISCORD_AVATAR_URL=your_avatar_url
