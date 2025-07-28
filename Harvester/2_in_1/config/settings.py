@@ -31,7 +31,7 @@ LOCK_FILE = "data/bot.lock"
 LOG_FILE = "data/logs/logs.log"
 
 # == Таблица лидеров ==
-SCORE_FILE = "data/scores.json"
+SCORE_FILE = "data/leaderboard/scores.json"
 
 # == Список вопросов TRIVIA ==
 TRIVIA_FILE = "data/trivia_questions.txt"
