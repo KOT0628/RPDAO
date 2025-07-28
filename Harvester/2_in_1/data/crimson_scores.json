@@ -1,0 +1,17 @@
+{
+  "123456789": {
+    "name": "RedKnight",
+    "score": 500,
+    "note": "Top killer"
+  },
+  "987654321": {
+    "name": "CrimsonFox",
+    "score": 420,
+    "note": "Ambassador"
+  },
+  "111222333": {
+    "name": "NeoMars",
+    "score": 350,
+    "note": ""
+  }
+}
