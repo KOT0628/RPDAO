@@ -61,9 +61,9 @@ MAP_FILE = "data/message_map.json"
 # == Генерация изображений ==
 BACKGROUND_PATH = "assets/backgrounds/background.jpg"
 FONT_PATH = "assets/fonts/SpicyRice-Regular.ttf"
-BTC_IMAGE_OUTPUT = "data/btc_price_output.jpg"
-GM_IMAGE_OUTPUT = "data/gm_output.jpg"
-GN_IMAGE_OUTPUT = "data/gn_output.jpg"
+BTC_IMAGE_OUTPUT = "data/img_output/btc_price_output.jpg"
+GM_IMAGE_OUTPUT = "data/img_output/gm_output.jpg"
+GN_IMAGE_OUTPUT = "data/img_output/gn_output.jpg"
 
 # === ЗАГРУЗКА ПЕРЕМЕННЫХ ОКРУЖЕНИЯ ===
 load_dotenv()
