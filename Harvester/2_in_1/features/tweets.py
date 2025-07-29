@@ -33,6 +33,11 @@ from utils.tweets_guard import (
 twitter_enabled = True
 twitter_disabled = False
 
+def set_twitter_flags(disabled: bool):
+    global twitter_disabled, twitter_enabled
+    twitter_disabled = disabled
+    twitter_enabled = not disabled
+
 # === ОТКЛЮЧЕНИЕ ПРОВЕРКИ ТВИТОВ ===
 
 ...
