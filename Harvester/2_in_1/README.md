@@ -10,7 +10,6 @@
 
   * [🟣 Telegram](#-telegram-1)
   * [🔵 Discord](#-discord-1)
-* [🛡️ Защита Twitter API](#-защита-twitter-api)
 * [🛠 Требования](#-требования)
 * [🔧 Установка](#-установка)
 
