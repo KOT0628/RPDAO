@@ -4,6 +4,7 @@ import logging
 
 TWITTER_TIMESTAMP_FILE = "data/twitter/last_twitter_check.txt"
 TWITTER_BLOCK_FILE = "data/twitter/twitter_block.txt"
+TWITTER_DISABLED_FILE = "data/twitter/twitter_disabled.txt"
 
 # === ПРОВЕРКА ИНТЕРВАЛА МЕЖДУ ЗАПРОСАМИ ===
 
@@ -26,6 +27,10 @@ TWITTER_BLOCK_FILE = "data/twitter/twitter_block.txt"
 ...
 
 # === ПРОПУСК ЗАПРОСА, ЕСЛИ НЕ ТРЕБУЕТСЯ ===
+
+...
+
+# === ЗАГРУЗКА СОСТОЯНИЯ БЛОКИРОВКИ TWITTER ===
 
 ...
 
