@@ -37,6 +37,7 @@ from .ticket_notify import on_guild_channel_create
 from .tweets import (
     fetch_and_send_tweets,
     check_reset_twitter_flag,
+    set_twitter_flags,
 )
 
 def register_utils_commands(bot):
