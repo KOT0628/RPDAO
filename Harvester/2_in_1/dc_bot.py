@@ -19,13 +19,14 @@ from tweepy.asynchronous import AsyncClient
 import utils.dc_helpers as helpers
 
 from config.settings import BEARER_TOKEN, DISCORD_TOKEN, GUILD_ID
+from features import tweets
 from features.game import register_games_commands
 from features import register_utils_commands
 from features.dc_price import update_btc_channel_name
-from features.tweets import fetch_and_send_tweets, check_reset_twitter_flag
+from features.ticket_notify import on_guild_channel_create as ticket_handler
 from utils import logger
 from utils.scheduler import run_scheduler
-from features.ticket_notify import on_guild_channel_create as ticket_handler
+from utils.tweets_guard import load_twitter_block_flag
 
 # === ЗАГРУЗКА ДАННЫХ ===
 # == Загрузка последней цены $BTC ==
@@ -45,6 +46,18 @@ bot = commands.Bot(command_prefix="/", intents=intents)
 # === ИНИЦИАЛИЗАЦИЯ TWITTER КЛИЕНТА ===
 twitter_client = AsyncClient(bearer_token=BEARER_TOKEN)
 
+# == Проверка флага блокировки Twitter ==
+try:
+    flag = load_twitter_block_flag()
+except Exception as e:
+    logging.warning(f"[DC_MAIN] Не удалось загрузить флаг блокировки Twitter: {e}")
+    flag = False
+
+tweets.set_twitter_flags(flag)
+logging.info(
+    f"[DC_MAIN] Стартовое состояние Twitter: {'Отключено' if flag else 'Включено'}"
+)
+
 # === ЦИКЛЫ ЗАДАЧ ===
 # == Обновление цены BTC в названии канала ==
 async def btc_loop():
@@ -58,12 +71,18 @@ async def btc_loop():
 
 # == Проверка и отправка новых твитов ==
 async def twitter_loop(bot, twitter_client):
+    logged_disabled = False
     while True:
         try:
-            await fetch_and_send_tweets(bot, twitter_client)
+            if not tweets.twitter_enabled:
+                logging.info("[TWITTER_LOOP] Twitter отключён - пропуск итерации.")
+                logged_disabled = True
+            else:
+                logged_disabled = False
+                await tweets.fetch_and_send_tweets(bot, twitter_client)
         except Exception as e:
             logging.exception(f"[DC_MAIN] Ошибка в twitter_loop: {e}")
-        await asyncio.sleep(1800 + random.randint(-120, 120))  # каждые 30 минут
+        await asyncio.sleep(1800 + random.randint(-120, 120))  # каждые ~30 минут
 
 # === ИНИЦИАЛИЗАЦИЯ ===
 # == Обработчик создания канала с тикетами ==
@@ -79,7 +98,7 @@ async def on_ready():
 
     asyncio.create_task(btc_loop())
     asyncio.create_task(twitter_loop(bot, twitter_client))
-    asyncio.create_task(check_reset_twitter_flag())
+    asyncio.create_task(tweets.check_reset_twitter_flag())
 
 # === ЗАПУСК БОТА ===
 def run_discord_bot():
