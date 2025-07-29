@@ -34,7 +34,7 @@ LOG_FILE = "data/logs/logs.log"
 SCORE_FILE = "data/leaderboard/scores.json"
 
 # == Список вопросов TRIVIA ==
-TRIVIA_FILE = "data/trivia_questions.txt"
+TRIVIA_FILE = "data/game/trivia_questions.txt"
 
 # == Поддержка русских чисел на Python для TRIVIA ==
 RU_NUMBERS = {
