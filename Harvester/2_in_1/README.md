@@ -1,6 +1,6 @@
 ## 📚 Оглавление
 
-* [🔴 Red Planet Harvester Bot](#-red-planet-harvester-bot)
+* [🔴 Red Planet Harvester Bot](#-red-planet-harvester-bot-разработка-прекращена)
 * [📦 Функционал и возможности](#-функционал-и-возможности)
 
   * [🟣 Telegram](#-telegram)
