@@ -1,31 +1,29 @@
 ## 📚 Contents
 
-* [🔴 Red Planet Harvester Bot](#-red-planet-harvester-bot-development-discontinued)
-* [📦 Features and Capabilities](#-features-and-capabilities)
+* [🔴 Red Planet Harvester Bot](#-red-planet-harvester-bot)
+* [📦 Functionality and Capabilities](#-functionality-and-capabilities)
 
-* [🟣 Telegram](#-telegram)
-* [🔵 Discord](#-discord)
-* [🔴 Common Features](#-common-features)
+  * [🟣 Telegram](#-telegram)
+  * [🔵 Discord](#-discord)
+  * [🔴 General Features](#-general-features)
 
-* [📚 Supported Commands](#-supported-commands)
+* [📚 Supported slash commands](#-supported-slash-commands)
 
-* [🟣 Telegram](#-telegram-1)
-* [🔵 Discord](#-discord-1)
+  * [🟣 Telegram](#-telegram-1)
+  * [🔵 Discord](#-discord-1)
 
 * [🛠 Requirements](#-requirements)
-* [🔧 Installation](#-installation)
 
-* [🗂 Project Structure](#-1-project-structure)
-* [🌐 Installing a virtual environment for Windows](#-2-installing-a-virtual-environment-for-windows)
-* [📥 Installing dependencies](#-3-installing-dependencies)
-* [🔐 Creating .env](#-4-create-an-env-file-with-the-following-variables)
-* [📂 Helper files](#-5-helper-files)
+  * [🗂 Project Structure](#-1-project-structure)
+  * [📥 Installing dependencies](#-2-installing-dependencies)
+  * [🔐 Creating .env](#-3-create-a-env-file-with-the-following-variables)
+  * [📂 Auxiliary files](#-4-auxiliary-files)
 
-* [🛠️ Technologies used](#️-technologies used)
+* [🛠️ Technologies used](#%EF%B8%8F-technologies-used)
 * [📷 Screenshots](#-screenshots)
-* [🚀 Startup](#-startup)
+* [🚀 Launch](#-launch)
 * [🧹 Shutdown](#-shutdown)
-* [⚠️ Notes](#️-notes)
+* [⚠️ Notes](#%EF%B8%8F-notes)
 * [👤 Author](#-author)
 * [📝 License](#-license)
 
