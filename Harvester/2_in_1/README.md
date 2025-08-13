@@ -444,7 +444,7 @@ When the script terminates, `bot.lock` is automatically removed so that the **Te
 
 ## 👤 Author
 
-Created with ❤️ for [Red Planet DAO](https://linktr.ee/rpdao)
+Created with ❤️ for [Red Planet DAO](https://linktr.ee/rpdao)  
 Author: [KOT](https://github.com/KOT0628)
 
 ---
