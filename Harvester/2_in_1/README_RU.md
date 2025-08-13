@@ -460,6 +460,32 @@ DISCORD_AVATAR_URL=your_avatar_url
 
 ## 📷 Скриншоты
 
+![001](https://github.com/user-attachments/assets/92295d29-269f-4f49-b2a4-8e95059fd38c)
+
+---
+
+![002](https://github.com/user-attachments/assets/61d96108-7678-4a22-bbe8-f79b9fcb74da)
+
+---
+
+![003](https://github.com/user-attachments/assets/1febf595-574b-4146-aa78-dcb4b09261e8)
+
+---
+
+![004](https://github.com/user-attachments/assets/2dd836d5-bc50-4bce-be9b-54963cdfe0f9)
+
+---
+
+![005](https://github.com/user-attachments/assets/928b4efc-1006-4321-b55a-f2552297cbb5)
+
+---
+
+![006](https://github.com/user-attachments/assets/3a427db5-5e32-4d6a-9126-a33ddc749563)
+
+---
+
+![007](https://github.com/user-attachments/assets/1f36afc1-c035-4df4-8fed-e2fcdcc1576d)
+
 ---
 
 ## 🚀 Запуск
