@@ -1,4 +1,37 @@
-# 🔴 Red Planet Harvester Bot (Разработка прекращена)
+## 📚 Contents
+
+* [🔴 Red Planet Harvester Bot](#-red-planet-harvester-bot-development-discontinued)
+* [📦 Features and Capabilities](#-features-and-capabilities)
+
+* [🟣 Telegram](#-telegram)
+* [🔵 Discord](#-discord)
+* [🔴 Common Features](#-common-features)
+
+* [📚 Supported Commands](#-supported-commands)
+
+* [🟣 Telegram](#-telegram-1)
+* [🔵 Discord](#-discord-1)
+
+* [🛠 Requirements](#-requirements)
+* [🔧 Installation](#-installation)
+
+* [🗂 Project Structure](#-1-project-structure)
+* [🌐 Installing a virtual environment for Windows](#-2-installing-a-virtual-environment-for-windows)
+* [📥 Installing dependencies](#-3-installing-dependencies)
+* [🔐 Creating .env](#-4-create-an-env-file-with-the-following-variables)
+* [📂 Helper files](#-5-helper-files)
+
+* [🛠️ Technologies used](#️-technologies used)
+* [📷 Screenshots](#-screenshots)
+* [🚀 Startup](#-startup)
+* [🧹 Shutdown](#-shutdown)
+* [⚠️ Notes](#️-notes)
+* [👤 Author](#-author)
+* [📝 License](#-license)
+
+---
+
+# 🔴 Red Planet Harvester Bot
 
 > ***Red Planet Harvester*** - *is a multifunctional, universal bot for the Red Planet DAO community, combining the capabilities of Telegram and Discord in one script.*
 
