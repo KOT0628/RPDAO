@@ -1,5 +1,4 @@
-![photo_2025-01-27_23-24-49](https://github.com/user-attachments/assets/ddea48bf-ea5a-48c9-93d1-05701aec83c3)
-
+![photo_2025-01-27_23-24-49](https://github.com/user-attachments/assets/f7b57741-3cec-44bf-bbb7-84625f9a465f)
 
  ## **Миссия: "Связи, что формируют галактику"**
 
@@ -14,8 +13,6 @@
 - `@neutron_org`,
 - `@ChihuahuaChain`,
 - `@madscientists_x`,
-- `@DA0_DA0`,
-- `@orchestra_labs`,
 - `@cryptodungeonma`.
 
 ⚠️ Но будь внимателен - простые крики «залетай в NFT» - не работают на этой высоте. Тебе нужно **написать осмысленный, связный твит**, который покажет, **почему эта связка важна**, в чём её сила, ценность и миссия.
