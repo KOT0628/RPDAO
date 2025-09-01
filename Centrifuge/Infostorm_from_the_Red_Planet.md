@@ -13,8 +13,6 @@
 - @neutron_org,
 - @ChihuahuaChain,
 - @madscientists_x,
-- @DA0_DA0,
-- @orchestra_labs,
 - @cryptodungeonma.
 
 ---
