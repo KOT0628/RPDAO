@@ -1,4 +1,4 @@
-![photo_2025-03-31_23-09-20](https://github.com/user-attachments/assets/1f14daca-94e3-4230-ba93-a8b9aaa1c0c5)
+![photo_2025-03-31_23-09-20](https://github.com/user-attachments/assets/29d54938-2d88-40d1-8c45-2dc54c086d29)
 
 ## Миссия: «Хроники Красной Планеты»
 
