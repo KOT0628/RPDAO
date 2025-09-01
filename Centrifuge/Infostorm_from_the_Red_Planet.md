@@ -1,4 +1,4 @@
-![Goj5UVDXoAAGAMk](https://github.com/user-attachments/assets/59b6d8ce-6791-49e9-ac94-88f0912f93d1)
+![GojftV6WwAAHsxW](https://github.com/user-attachments/assets/fc94e9ce-7e8a-40fb-93b9-eb74c120e7c2)
 
 ## **Миссия от Совета Коммандоров: "Связи сильнее спама"**
 
