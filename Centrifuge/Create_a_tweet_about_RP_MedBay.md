@@ -1,4 +1,4 @@
-https://github.com/KOT0628/RPDAO/blob/main/Red_Planet_MedBay/2_20250907_132618_0001.png?raw=true
+https://github.com/KOT0628/RPDAO/blob/main/Red_Planet_MedBay/2_20250907_132618_0001.png
 
 ## **Миссия: MedBay Transmission**
 
