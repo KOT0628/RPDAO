@@ -14,10 +14,10 @@ commands = [
     {"command": "gm", "description": "Good morning RPDAO"},
     {"command": "gn", "description": "Good night RPDAO"},
     {"command": "rpdao_game", "description": "Game Zone RPDAO"},
-    {"command": "crimson_board", "description": "Leaderboard Crimson Envoys"},    
+    {"command": "start_roll", "description": "Launch Roll-game"},
     {"command": "link", "description": "Official links Red Planet DAO"},
     {"command": "stop", "description": "Disabling the use of slash commands"},
-    {"command": "start", "description": "Enabling the use of slash commands"},
+    {"command": "resume", "description": "Enabling the use of slash commands"},
 ]
 
 response = requests.post(url, json={"commands": commands})
