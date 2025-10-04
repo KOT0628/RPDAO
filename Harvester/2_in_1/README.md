@@ -36,7 +36,7 @@
 This bot will automatically:
 
 - sends a generated image with the current Bitcoin price to [Telegram](https://t.me/rpdao) and [Discord](https://discord.gg/g4b8RsbnNd) **"Red Planet DAO"** every 4 hours;
-- processes slash commands: `/price`, `/roll`, `/reroll`, `/gm`, `/gn`, `/rpdao_game` `/crimson_board`, `/link`;
+- processes slash commands: `/price`, `/roll`, `/reroll`, `/gm`, `/gn`, `/rpdao_game`, `/link`;
 - forwards all messages and images **from Telegram to Discord**, with automatic translation into English;
 - forwards all messages and images **from Discord to Telegram**;
 - supports tweet relaying **from Twitter to Discord**.
@@ -133,7 +133,7 @@ This bot will automatically:
 | `/rpdao_trivia_off` | Stops the TRIVIA                             |
 | `/score`            | Opens the Game Zone leaderboard              |
 | `/stop`             | Disables slash commands                      |
-| `/start`            | Enables slash commands                       |
+| `/resume`           | Enables slash commands                       |
 
 ### 🔵 **Discord:**
 
@@ -446,7 +446,7 @@ python main.py
 - monitor the creation of new "tickets" and send a notification to Telegram
 - every 4 hours publish an image with the price of $BTC in **Telegram**
 - react to the processing of slash commands:
-- **Telegram** `/price`, `/gm`, `/gn`, `/rpdao_game`, `/crimson_board`, `/link`, `/start_roll` / `/roll` / `/stop_roll`, `/reroll_on` / `/reroll` / `/reroll_off`, `/rpdao_trivia` / `/rpdao_trivia_off`, `/score`, `/stop` / `/start`
+- **Telegram** `/price`, `/gm`, `/gn`, `/rpdao_game`, `/crimson_board`, `/link`, `/start_roll` / `/roll` / `/stop_roll`, `/reroll_on` / `/reroll` / `/reroll_off`, `/rpdao_trivia` / `/rpdao_trivia_off`, `/score`, `/stop` / `/resume`
 - **Discord** `/price`, `/roll`, `/reroll`
 - automatically forward all messages and photos to **Discord** with English translation
 - automatically forward all messages and photos to **Telegram**
