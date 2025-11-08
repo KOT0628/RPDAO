@@ -1,314 +1,262 @@
-## 📚 Оглавление
+## 📚 Contents
 
-* [🔴 Red Planet Harvester Bot](#-red-planet-harvester-bot-разработка-прекращена)
-* [📦 Функционал и возможности](#-функционал-и-возможности)
+* [🔴 Red Planet Harvester Bot](#-red-planet-harvester-bot)
+* [📦 Functionality and Capabilities](#-functionality-and-capabilities)
 
   * [🟣 Telegram](#-telegram)
   * [🔵 Discord](#-discord)
-  * [🔴 Общие функции](#-общие-функции)
-  
-* [📚 Поддерживаемые команды](#-поддерживаемые-команды)
+  * [🔴 General Features](#-general-features)
+
+* [📚 Supported slash commands](#-supported-slash-commands)
 
   * [🟣 Telegram](#-telegram-1)
   * [🔵 Discord](#-discord-1)
-  
-* [🛠 Требования](#-требования)
-* [🔧 Установка](#-установка)
 
-  * [🗂 Структура проекта](#-1-структура-проекта)
-  * [🌐 Установка виртуального окружения для Windows](#-2-установка-виртуального-окружения-для-windows)
-  * [📥 Установка зависимостей](#-3-установка-зависимостей)
-  * [🔐 Создание .env](#-4-создай-env-файл-со-следующими-переменными)
-  * [📂 Вспомогательные файлы](#-5-вспомогательные-файлы)
-  
-* [🛠️ Используемые технологии](#️-используемые-технологии)
-* [📷 Скриншоты](#-скриншоты)
-* [🚀 Запуск](#-запуск)
-* [🧹 Завершение работы](#-завершение-работы)
-* [⚠️ Примечания](#️-примечания)
-* [👤 Автор](#-автор)
-* [📝 Лицензия](#-лицензия)
+* [🛠 Requirements](#-requirements)
+
+  * [🗂 Project Structure](#-1-project-structure)
+  * [📥 Installing dependencies](#-2-installing-dependencies)
+  * [🔐 Creating .env](#-3-create-a-env-file-with-the-following-variables)
+  * [📂 Auxiliary files](#-4-auxiliary-files)
+
+* [🛠️ Technologies used](#%EF%B8%8F-technologies-used)
+* [📷 Screenshots](#-screenshots)
+* [🚀 Launch](#-launch)
+* [🧹 Shutdown](#-shutdown)
+* [⚠️ Notes](#%EF%B8%8F-notes)
+* [👤 Author](#-author)
+* [📝 License](#-license)
 
 ---
 
-# 🔴 Red Planet Harvester Bot (Разработка прекращена)
+# 🔴 Red Planet Harvester Bot
 
-> ***Red Planet Harvester*** - *это многофункциональный, универсальный бот для сообщества Red Planet DAO, объединяющий возможности Telegram и Discord в одном скрипте.*
+> ***Red Planet Harvester*** - *is a multifunctional, universal bot for the Red Planet DAO community, combining the capabilities of Telegram and Discord in one script.*
 
-Этот бот автоматически:
+This bot will automatically:
 
-- отправляет сгенерированное изображение с текущей ценой Bitcoin в [Telegram](https://t.me/rpdao) и [Discord](https://discord.gg/g4b8RsbnNd) **"Red Planet DAO"** каждые 4 часа;
-- обрабатывает слэш-команды: `/price`, `/roll`, `/reroll`, `/gm`, `/gn`, `/rpdao_game`, `/link`;
-- пересылает все сообщения и изображения **из Telegram в Discord**, с автоматическим переводом на английский язык;
-- пересылает все сообщения и изображения **из Discord в Telegram**;
-- поддерживает ретрансляцию твитов **с Twitter в Discord**.
+- sends a generated image with the current Bitcoin price to [Telegram](https://t.me/rpdao) and [Discord](https://discord.gg/g4b8RsbnNd) **"Red Planet DAO"** every 4 hours;
+- processes slash commands: `/price`, `/roll`, `/reroll`, `/gm`, `/gn`, `/rpdao_game`, `/start_roll`, `/link`, `/stop`, `/resume`;
+- forwards all messages and images **from Telegram to Discord**, with automatic translation into English;
+- forwards all messages and images **from Discord to Telegram**;
+- supports tweet relaying **from Twitter to Discord**.
 
 ---
 
-## 📦 Функционал и возможности
+## 📦 Functionality and capabilities
 
 ### 🟣 **Telegram:**
 
-- 🕓 Автоматическая публикация изображения с ценой $BTC каждые 4 часа
-- 💬 Пересылка всех сообщений и изображений из Telegram в Discord (с переводом на английский)
-- 🎮 Игровая зона:
-  - 🎲 мини-игра `ROLL` - случайное число от 0 до 100, используя `/roll`
-  - 🎰 мини-игра `"Камень, ножницы, бумага"`, используя `/reroll`
-  - 🧠 викторина `TRIVIA` с автоматическими подсказками и двумя режимами игры:
-    - **Рандомный режим** - вопрос приходит через 30-90 минут после предыдущего правильного ответа.  
-	- **Фиксированный режим** - строгий 60-секундный интервал между раундами.
-  - 🏆 просмотр таблицы лидеров (с навигацией по страницам):
-    - 📤 в общем чате
-	- 📬 в личных сообщениях
-- 🏆 Лидерборд Crimson Envoys:
-  - `/crimson_board` — просмотр таблицы лидеров Алых Посланников (с навигацией по страницам):
-    - 📤 в общем чате
-	- 📬 в личных сообщениях
-- 🔗 Ссылки на социальные сети Red Planet DAO:
-  - `/link` - просмотр оффициальных ссылок Red Planet DAO:
-    - 📤 в общем чате
-	- 📬 в личных сообщениях
-- 🛡️ Защита:
-  - от старых сообщений (не реагирует на устаревшие)
-  - от двойного запуска через `bot.lock`
-- 📝 Логирование переводчика:
-  - в файл `translate.txt` (автоматическая очистка каждые 3 дня)
+- 🕓 Automatic posting of an image with the price of $BTC every 4 hours
+- 💬 Forwarding all messages and images from Telegram to Discord (with translation into English)
+- 🎮 Game zone:
+  - 🎲 mini-game `ROLL` - a random number from 0 to 100, using `/roll`
+  - 🎰 mini-game `"Rock, paper, scissors"`, using `/reroll`
+  - 🧠 quiz `TRIVIA` with automatic hints and two game modes:
+    - **Random mode** - a question comes 30-90 minutes after the previous correct answer.
+    - **Fixed mode** - a strict 60-second interval between rounds.
+  - 🏆 View leaderboard (with page navigation):
+    - 📤 in general chat
+    - 📬 in private messages
+  - 🏆 Crimson Envoys leaderboard:
+    - `/crimson_board` — view Crimson Envoys leaderboard (with page navigation):
+      - 📤 in general chat
+      - 📬 in private messages
+  - 🔗 Red Planet DAO social media links:
+    - `/link` — view official Red Planet DAO links:
+      - 📤 in general chat
+      - 📬 in private messages
+- 🛡️ Protection:
+  - from old messages (does not respond to outdated ones)
+  - from double launch via `bot.lock`
+- 📝 Translator logging:
+  - to `translate.txt` file (automatically cleared every 3 days)
 
-- 📤 CLI-бот для Telegram:
-  - 💬 многострочный ввод
-  - 📷 фото и 📹 видео
-  - 📁 выбор последних файлов
-  - 📌 закрепление
-  - 🧾 ответ на сообщение
+- 📤 CLI bot for Telegram:
+  - 💬 multiline input
+  - 📷 photos and 📹 videos
+  - 📁 recent file selection
+  - 📌 pinning
+  - 🧾 reply to message
   - 📦 drag-and-drop
 
 ### 🔵 **Discord:**
 
-- 📈 Автообновление цены Bitcoin через API CoinGecko:
-  - отображение её в названии голосового канала
-  - 🟢🔴 эмоджи и стрелки в зависимости от изменения цены
-- 🎲 Команда `/roll` - случайное число от 0 до 100
-- 🎰 Команда `/reroll` - мини-игра "Камень, ножницы, бумага"
-- 🐦 Ретрансляция оригинальных твитов из аккаунта Twitter в канал Discord:
-  - 🔗 кнопки для перехода к твиту и ретвита
-  - ❤️ автоматические реакции на твит
-- 🔄 Пересылка сообщений и фото из Discord в Telegram
-- 📬 Отправка уведомлений в Telegram о новых "Тикетах"
-- 🛡️ Защита:
-  - 🐦 Twitter API - многоуровневая защита от превышения лимитов:
-    - ⏱️ **Ограничение частоты** - учёт времени последней удачной проверки твитов;
-    - 🔁 **Автоматическая блокировка** при получении ошибки `429 Too Many Requests`;
-    - 📅 **Обнаружение месячного лимита** (`Usage cap exceeded`) и отключение ретрансляции до N числа;
-    - 📁 **Сохранение состояния блокировки** в файл - даже при перезапуске бот не будет использовать API до окончания периода блокировки;
-	- ✅ **Восстановление доступа** после окончания временной или месячной блокировки - автоматически.
+- 📈 Automatic Bitcoin price update via CoinGecko API:
+  - display it in the voice channel name
+  - 🟢🔴 emoji and arrows depending on the price change
+- 🎲 Command `/roll` - random number from 0 to 100
+- 🎰 Command `/reroll` - mini-game "Rock, paper, scissors"
+- 🐦 Relaying original tweets from a Twitter account to a Discord channel:
+  - 🔗 buttons to go to a tweet and retweet
+  - ❤️ automatic reactions to a tweet
+- 🔄 Forwarding messages and photos from Discord to Telegram
+- 📬 Sending notifications to Telegram about new "Tickets"
+- 🛡️ Protection:
+  - 🐦 Twitter API - multi-level protection against exceeding limits:
+    - ⏱️ **Limit frequencies** - takes into account the time of the last successful verification of tweets;
+    - 🔁 **Automatic blocking** when receiving the `429 Too Many Requests` error;
+    - 📅 **Detection of the monthly limit** (`Usage cap exceeded`) and disabling retransmission until the Nth number;
+    - 📁 **Saving the blocking state** to a file - even when restarting, the bot will not use the API until the end of the blocking period;
+    - ✅ **Restoration of access** after the end of a temporary or monthly blocking - automatically.
 
-### 🔴 **Общие функции:**
+### 🔴 **General Features:**
 
-- 📸 Генерация изображений:
-  - `/price` - $BTC цена
-  - `/gm` - доброе утро (случайная фраза, случайный фон)
-  - `/gn` - спокойной ночи (случайная фраза, случайный фон)
-- 📝 Логирование:
-  - в один файл `logs.txt` - с ротацией по времени (1 день) и автоматическим удалением старых файлов (старше 7 дней)
+- 📸 Image generation:
+  - `/price` - $BTC price
+  - `/gm` - good morning (random phrase, random background)
+  - `/gn` - good night (random phrase, random background)
+- 📝 Logging:
+  - in one file `logs.txt` - with time rotation (1 day) and automatic deletion of old files (older than 7 days)
 
 ---
 
-## 👁 Поддерживаемые команды
+## 👁 Supported slash commands
 
 ### 🟣 **Telegram:**
 
-| Команда             | Назначение                                        |
-| ------------------- | ------------------------------------------------- |
-| `/price`            | Отправляет картинку с текущей ценой BTC           |
-| `/roll`             | Выдаёт случайное число от 0 до 100                |
-| `/reroll`           | Камень, ножницы или бумага (эмодзи)               |
-| `/gm`               | Отправляет картинку с "Добрым утром"              |
-| `/gn`               | Отправляет картинку с "Доброй ночи"               |
-| `/rpdao_game`       | Открывает меню "Игровой зоны"                     |
-| `/crimson_board`    | Открывает таблицу лидеров Crimson Envoy           |
-| `/link`             | Отправляет ссылки на социальные сети              |
-| `/start_roll`       | Запускает режим турнира "ROLL"                    |
-| `/stop_roll`        | Останавливает режим турнира "ROLL"                |
-| `/reroll_on`        | Запускает мини-игру "Камень, ножницы, бумага"     |
-| `/reroll_off`       | Останавливает мини-игру "Камень, ножницы, бумага" |
-| `/rpdao_trivia`     | Запускает викторину "TRIVIA"                      |
-| `/rpdao_trivia_off` | Останавливает викторину "TRIVIA"                  |
-| `/score`            | Открывает таблицу лидеров "Игровой зоны"          |
-| `/stop`             | Отключение использования слэш-команд              |
-| `/resume`           | Включение использования слэш-команд               |
+| Command             | Purpose                                      |
+| ------------------- | -------------------------------------------- |
+| `/price`            | Sends a picture with the current BTC price   |
+| `/roll`             | Generates a random number from 0 to 100      |
+| `/reroll`           | Rock, paper or scissors (emoji)              |
+| `/gm`               | Sends a picture with "Good morning"          |
+| `/gn`               | Sends a picture with "Good night"            |
+| `/rpdao_game`       | Opens the "Game Zone" menu                   |
+| `/crimson_board`    | Opens the Crimson Envoy leaderboard          |
+| `/link`             | Sends links to social-media                  |
+| `/start_roll`       | Starts the "ROLL" tournament mode            |
+| `/stop_roll`        | Stops the "ROLL" tournament mode             |
+| `/reroll_on`        | Starts the Rock, Paper, Scissors minigame    |
+| `/reroll_off`       | Stops the Rock, Paper, Scissors minigame     |
+| `/rpdao_trivia`     | Starts the TRIVIA                            |
+| `/rpdao_trivia_off` | Stops the TRIVIA                             |
+| `/score`            | Opens the Game Zone leaderboard              |
+| `/tag`              | Tags active chat participants from the list  |
+| `/stop`             | Disables slash commands                      |
+| `/resume`           | Enables slash commands                       |
 
 ### 🔵 **Discord:**
 
-| Команда   | Назначение                              |
-| --------- | --------------------------------------- |
-| `/price`  | Отправляет картинку с текущей ценой BTC |
-| `/roll`   | Выдаёт случайное число от 0 до 100      |
-| `/reroll` | Камень, ножницы или бумага (эмодзи)     |
+| Command   | Purpose                                    |
+| --------- | ------------------------------------------ |
+| `/price`  | Sends a picture with the current BTC price |
+| `/roll`   | Gives a random number from 0 to 100        |
+| `/reroll` | Rock, paper or scissors (emoji)            |
 
 ---
 
-## 🛠 Требования
+## 🛠 Requirements
 
-- Python 3.8+
-- Telegram Bot Token
-- Discord Bot Token
-- Twitter API Token
-- DeepL API Token
-- GoogeCloud Translate API Token
-
----
-
-## 🔧 Установка
-
-### 🗂 **1. Структура проекта**
+### 🗂 **1. Project structure**
 
 ```
 RPDAO-Harvester_v2.0/
 │
 ├── __init__.py
-├── main.py                            # Главная точка входа
-├── tg_bot.py                          # Запуск Telegram бота
-├── dc_bot.py                          # Запуск Discord бота
+├── main.py                            # Main entry point
+├── tg_bot.py                          # Launching a Telegram bot
+├── dc_bot.py                          # Launching a Discord bot
 │
-├── console_sender.py                  # CLI-бот для Telegram
+├── console_sender.py                  # CLI bot for Telegram
 │
-├── config/                            # Конфигурации
+├── config/                            # Configurations
 │   ├── __init__.py
-│   └── settings.py                    # Загрузка переменных окружения
+│   └── settings.py                    # Loading environment variables
 │
-├── utils/                             # Вспомогательные функции
+├── utils/                             # Auxiliary functions
 │   ├── __init__.py
-│   ├── check_admin.py                 # Проверка прав администратора
-│   ├── dc_helpers.py                  # Экранирование, сохранение последнего твита и др.
-│   ├── helpers.py                     # Экранирование, удаление сообщений и др.
-│   ├── image.py                       # Генерация изображений
-│   ├── logger.py                      # Настройка логирования
-│   ├── message_map.py                 # Маппинг сообщений Discord - Telegram
-│   ├── scheduler.py                   # Планировщик schedule
-│   ├── scoreboard.py                  # Формирование Leaderboard
-│   ├── telegram_notify.py             # Отправка оповещения о новом "тикете" в Telegram
-│   ├── translate.py                   # Универсальный переводчик
-│   └── tweets_guard.py                # Контроль частоты обращений к Twitter API
+│   ├── check_admin.py                 # Checking administrator rights
+│   ├── dc_helpers.py                  # Screening, saving the last tweet, etc.
+│   ├── helpers.py                     # Screening, deleting messages, etc.
+│   ├── image.py                       # Image generation
+│   ├── logger.py                      # Setting up logging
+│   ├── message_map.py                 # Discord - Telegram message mapping
+│   ├── scheduler.py                   # Scheduler
+│   ├── scoreboard.py                  # Formation of Leaderboard
+│   ├── telegram_notify.py             # Sending a notification about a new "ticket" in Telegram
+│   ├── translate.py                   # Universal translator
+│   └── tweets_guard.py                # Monitoring Twitter API call rates
 │
-├── features/                          # Основной функционал
-│   ├── game/                          # Игры в чате Red Planet DAO
+├── features/                          # Main functionality
+│   ├── game/                          # Red Planet DAO chat mini games
 │   │   ├── __init__.py 
-│   │   ├── dc_reroll.py               # Discord команда /reroll
-│   │   ├── dc_roll.py                 # Discord команда /reroll
-│   │   ├── game_menu.py               # Модуль игрового меню
-│   │   ├── game_state.py              # Модуль состояния режима Reroll
-│   │   ├── handlers.py                # Общий фасад для Roll, Reroll и TRIVIA
-│   │   ├── reroll.py                  # Логика Reroll
-│   │   ├── roll.py                    # Логика Roll
-│   │   └── trivia.py                  # Логика викторины
+│   │   ├── dc_reroll.py               # Discord slash command /reroll
+│   │   ├── dc_roll.py                 # Discord slash command /reroll
+│   │   ├── game_menu.py               # Game menu module
+│   │   ├── game_state.py              # Reroll Mode status module
+│   │   ├── handlers.py                # Common facade for Roll, Reroll and TRIVIA
+│   │   ├── reroll.py                  # Reroll logic
+│   │   ├── roll.py                    # Roll logic
+│   │   └── trivia.py                  # TRIVIA logic
 │   ├── __init__.py
-│   ├── crimson_board.py               # Логика Crimson Envoy Leaderboard
-│   ├── dc_price.py                    # Discord команда /price
-│   ├── discord_bridge.py              # Пересылка сообщений и фото в Discord
-│   ├── gm_gn.py                       # Telegram команды /gm и /gn
-│   ├── link.py                        # Команда /link
-│   ├── price.py                       # Telegram команда /price
-│   ├── score.py                       # Логика Game Leaderboard
-│   ├── stop_start.py                  # Отключение/включение использования слэш-команд
-│   ├── telegram_bridge.py             # Пересылка сообщений и фото в Telegram
-│   ├── ticket_notify.py               # Обработка создания нового канала с "тикетом"
-│   └── tweets.py                      # Ретрансляция твитов с Twitter в Discord
+│   ├── crimson_board.py               # Crimson Envoy Leaderboard logic
+│   ├── dc_price.py                    # Discord slash command /price
+│   ├── discord_bridge.py              # Forwarding messages and photos in Discord
+│   ├── gm_gn.py                       # Telegram slash commands /gm and /gn
+│   ├── link.py                        # Telegram slash command /link
+│   ├── price.py                       # Telegram slash command /price
+│   ├── score.py                       # Game Leaderboard logic
+│   ├── stop_start.py                  # Disabling/enabling the use of slash commands
+│   ├── tag.py                         # Tag active users in chat
+│   ├── telegram_bridge.py             # Forwarding messages and photos in Telegram
+│   ├── ticket_notify.py               # Processing the creation of a new channel with a "ticket"
+│   └── tweets.py                      # Relaying tweets from Twitter to Discord
 │
 ├── assets/
 │   ├── backgrounds/
-│   │   ├── morning/                   # Фоны для /gm
+│   │   ├── morning/                   # Backgrounds for /gm
 │   │   │   ├── 1.jpg
 │   │   │   ├── 2.jpg
 │   │   │   ├── 3.jpg
-│   │   ├── night/                     # Фоны для /gn
+│   │   ├── night/                     # Backgrounds for /gn
 │   │   │   ├── 1.jpg
 │   │   │   ├── 2.jpg
 │   │   │   ├── 3.jpg
-│   │   └── background.jpg             # Фон для /price
+│   │   └── background.jpg             # Background for /price
 │   ├── fonts/
-│   │   └── SpicyRice-Regular.ttf      # Шрифт
-│   ├── game_zone.jpg                  # Фон для основного меню "Игровой зоны"
-│   ├── leaderboard.jpg                # Фон подменю "Игровой зоны"
-│   ├── link.png                       # Фон для меню ссылок на соц.сети
-│   ├── reroll.jpg                     # Фон подменю "Игровой зоны"
-│   ├── roll.jpg                       # Фон подменю "Игровой зоны"
-│   └── trivia.txt                     # Фон подменю "Игровой зоны"
+│   │   └── SpicyRice-Regular.ttf      # Font
+│   ├── game_zone.jpg                  # Background for the main menu of the "Game Zone"
+│   ├── leaderboard.jpg                # Background of the submenu "Game zone"
+│   ├── link.png                       # Background for social media links menu
+│   ├── reroll.jpg                     # Background of the submenu "Game zone"
+│   ├── roll.jpg                       # Background of the submenu "Game zone"
+│   └── trivia.txt                     # Background of the submenu "Game zone"
 │
 ├── data/
 │   ├── discord/
-│   │   ├── last_price.txt             # Последняя цена $BTC
-│   │   └── message_map.json           # Файл маппинга сообщений
+│   │   ├── last_price.txt             # Latest Price $BTC
+│   │   └── message_map.json           # Message mapping file
 │   ├── game/
-│   │   └── trivia_questions.txt       # Вопросы для викторины
+│   │   ├── active_users.json          # List of active chat users
+│   │   └── trivia_questions.txt       # Quiz questions
 │   ├── img_output/
-│   │   ├── btc_price_output.jpg       # Сгенерированное изображение с ценой $BTC
-│   │   ├── gm_output.jpg              # Сгенерированное изображение "Доброе утро"
-│   │   └── gn_output.jpg              # Сгенерированное изображение "Доброй ночи"
+│   │   ├── btc_price_output.jpg       # Generated image with $BTC price
+│   │   ├── gm_output.jpg              # Generated image "Good morning"
+│   │   └── gn_output.jpg              # Generated image "Good night"
 │   ├── leadeboard/
-│   │   ├── crimson_scores.json        # Таблица лидеров Crimson Envoy
-│   │   └── scores.json                # Таблица лидеров "Игровой зоны"
+│   │   ├── crimson_scores.json        # Crimson Envoy Leaderboard
+│   │   └── scores.json                # "Game Zone" Leaderboard
 │   ├── logs/
-│   │   ├── logs.log                   # Файл логов
-│   │   └── translate.log              # Файл логов переводчика
+│   │   ├── logs.log                   # Log file
+│   │   └── translate.log              # Translator log file
 │   ├── secrets/
-│   │   └── google_key.json            # GoogleCloud Translate API ключ
+│   │   └── google_key.json            # GoogleCloud Translate API key
 │   └── twitter/
-│       ├── last_tweet.txt             # Последний ретранслируемый твит
-│       ├── last_twitter_check.txt     # Содержит время последней успешной проверки Twitter
-│       ├── twitter_block.txt          # Содержит время окончания временной блокировки API
-│       └── twitter_disabled.txt       # Содержит информацию о состоянии блокировки API
+│       ├── last_tweet.txt             # Last Rebroadcast Tweet
+│       ├── last_twitter_check.txt     # Contains the time of the last successful Twitter check
+│       ├── twitter_block.txt          # Contains the expiration time of the API temporary block
+│       └── twitter_disabled.txt       # Contains information about the API lock state
 │
-└── requirements.txt                   # Список зависимостей
+└── requirements.txt                   # List of dependencies
 ```
-### 🌐 **2. Установка виртуального окружения для Windows**
-
-- 2.1. 📁 Перейди в папку проекта
-
-Открой терминал (например, PowerShell или CMD) и перейди туда, где лежит твой проект:
-
-```powershell
-cd путь\к\твоему\проекту
-```
-
-Например:
-
-```powershell
-cd "G:\My disc\Cosmos Ecosystem\RPDAO_Bot"
-```
-
-- 2.2. 🐍 Убедись, что установлен Python
-
-Проверь:
-
-```powershell
-python --version
-```
-
-Если не установлен - [скачай и установи Python 3.10+ с python.org](https://www.python.org/downloads/windows/), не забудь поставить галочку **"Add Python to PATH"** при установке.
-
-- 2.3. 🌱 Создай виртуальное окружение
-
-```powershell
-python -m venv venv
-```
-
-После этого появится папка `venv/` внутри проекта - в ней будет всё изолировано.
-
-- 2.4. ▶️ Активируй окружение
-
-```powershell
-venv\Scripts\activate
-```
-
-После активации ты увидишь в начале строки терминала `(venv)` - это значит, окружение активно.
-
-### 📥 **3. Установка зависимостей:**
+### 📥 **2. Installing dependencies:**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Содержимое `requirements.txt`:
+Contents of `requirements.txt`:
 ```
 Pillow==10.4.0
 psutil==5.9.8
@@ -337,25 +285,25 @@ google-cloud-translate>=3.0.2
 langdetect==1.0.9
 ```
 
-### 🔐 **4. Создай `.env` файл со следующими переменными:**
+### 🔐 **3. Create a `.env` file with the following variables:**
 
-| Переменная                       | Описание                                      |
-|----------------------------------|-----------------------------------------------|
-| `TELEGRAM_TOKEN`                 | Telegram токен бота                           |
-| `CHAT_ID`                        | ID Telegram чата                              |
-| `DISCORD_TOKEN`                  | Discord токен бота                            |
-| `GUILD_ID`                       | ID вашего Discord сервера                     |
-| `COMMAND_CHANNEL_ID`             | ID канала для использования команд            |
-| `GAME_CHANNEL_ID`                | ID канала для исползования игровых команд     |
-| `DISCORD_CHANNEL_ID`             | ID канала для пересылки сообщений             |
-| `BTC_CHANNEL_ID`                 | ID канала для отображения цены                |
-| `TWITTER_CHANNEL_ID`             | ID канала для твитов                          |
-| `TWITTER_BEARER`                 | Bearer Token для Twitter API                  |
-| `TWITTER_USER_ID`                | ID профиля Twitter                            |
-| `DISCORD_WEBHOOK_URL`            | Discord Webhook URL (для пересылки в Discord) |
-| `DEEPL_API_KEY`                  | API ключ переводчика DeepL                    |
-| `GOOGLE_APPLICATION_CREDENTIALS` | API ключ GoogleCloud переводчика              |
-| `DISCORD_AVATAR_URL`             | URL аватарки для бота                         |
+| Variable                         | Description                                     |
+|----------------------------------|-------------------------------------------------|
+| `TELEGRAM_TOKEN`                 | Telegram bot token                              |
+| `CHAT_ID`                        | Telegram chat ID                                |
+| `DISCORD_TOKEN`                  | Discord bot token                               |
+| `GUILD_ID`                       | ID of your Discord server                       |
+| `COMMAND_CHANNEL_ID`             | Channel ID for using commands                   |
+| `GAME_CHANNEL_ID`                | Channel ID for using game commands              |
+| `DISCORD_CHANNEL_ID`             | Channel ID for forwarding messages              |
+| `BTC_CHANNEL_ID`                 | Channel ID for displaying prices                |
+| `TWITTER_CHANNEL_ID`             | Channel ID for tweets                           |
+| `TWITTER_BEARER`                 | Bearer Token for Twitter API                    |
+| `TWITTER_USER_ID`                | Twitter profile ID                              |
+| `DISCORD_WEBHOOK_URL`            | Discord Webhook URL (for forwarding to Discord) |
+| `DEEPL_API_KEY`                  | DeepL translator API key                        |
+| `GOOGLE_APPLICATION_CREDENTIALS` | GoogleCloud translator API key                  |
+| `DISCORD_AVATAR_URL`             | Bot avatar URL                                  |
 
 ```env
 # Telegram
@@ -378,87 +326,88 @@ TWITTER_USER_ID=twitter_user_id
 # Webhook (TG -> DC)
 DISCORD_WEBHOOK_URL=discord_webhook_url
 
-# Deepl (перевод)
+# Deepl (transkate)
 DEEPL_API_KEY=deepl_api_key
 GOOGLE_APPLICATION_CREDENTIALS=data/secrets/google_key.json
 
-# Прочее
+# Other
 DISCORD_AVATAR_URL=your_avatar_url
 ```
 
-### 📂 **5. Вспомогательные файлы:**
+### 📂 **4. Auxiliary files:**
 
-| Файл                     | Назначение                                                          |
-| ------------------------ | ------------------------------------------------------------------- |
-| `background.jpg`         | фон для изображения с ценой                                         |
-| `morning1-6.jpg`         | фоны для изображения "Доброе утро"                                  |
-| `night1-6.jpg`           | фоны для изображения "Доброё ночи"                                  |
-| `game_zone.jpg`          | фон для основного меню "Игровой зоны"                               |
-| `roll.jpg`               | фон для подменю `ROLL`                                              |
-| `reroll.jpg`             | фон для подменю `REROLL`                                            |
-| `trivia.jpg`             | фон для подменю `TRIVIA`                                            |
-| `leaderboard.jpg`        | фон для подменю `LEADERBOARD`                                       |
-| `SpicyRice-Regular.ttf`  | кастомный шрифт для текста                                          |
-| `last_price.txt`         | кэш последней цены BTC (создаётся автоматически)                    |
-| `last_tweet.txt`         | кэш последнего отправленного твита (создаётся автоматически)        |
-| `last_twitter_check.txt` | время последней успешной проверки Twitter (создаётся автоматически) |
-| `twitter_block.txt`      | время окончания временной блокировки API (создаётся автоматически)  |
-| `logs.log`               | общий лог-файл бота (создаётся автоматически)                       |
-| `translate.log`          | лог-файл переводчика (создаётся автоматически)                      |
-| `trivia_questions.txt`   | вопросы для викторины `TRIVIA`                                      |
-| `scores.json.`           | файл таблицы лидеров "Игровой зоны" (создаётся автоматически)       |
-| `crimson_scores.json`    | файл таблицы лидеров "Crimson Envoy"                                |
-| `message_map.json`       | файл маппинга сообщений (создаётся автоматически)                   |
-| `.env`                   | конфигурация токенов и ID                                           |
-| `google_key.json`        | API ключ GoogleCloud Translate                                      |
-| `requirements.txt`       | список зависимостей Python                                          |
-
----
-
-## 🛠️ Используемые технологии
-
-- [os](https://docs.python.org/3/library/os.html) встроенный модуль Python для работы с операционной системой (файлы, переменные окружения, процессы)  
-- [sys](https://docs.python.org/3/library/sys.html) встроенный модуль Python для доступа к системным параметрам и взаимодействия с интерпретатором  
-- [re](https://docs.python.org/3/library/re.html) встроенный модуль Python для работы с регулярными выражениями  
-- [time](https://docs.python.org/3/library/time.html) встроенный модуль Python для работы со временем и задержками  
-- [uuid](https://docs.python.org/3/library/uuid.html) встроенный модуль Python для генерации уникальных идентификаторов (UUID)  
-- [json](https://docs.python.org/3/library/json.html) встроенный модуль Python для кодирования и декодирования JSON-данных  
-- [random](https://docs.python.org/3/library/random.html) встроенный модуль Python для генерации случайных чисел и выборок  
-- [logging](https://docs.python.org/3/library/logging.html) встроенный модуль Python для ведения логов в приложениях  
-- [threading](https://docs.python.org/3/library/threading.html) встроенный модуль Python для многопоточности  
-- [tempfile](https://docs.python.org/3/library/tempfile.html) встроенный модуль Python для создания временных файлов и директорий  
-- [datetime](https://docs.python.org/3/library/datetime.html) встроенный модуль Python для работы с датами и временем  
-- [discord.py](https://discordpy.readthedocs.io/en/stable/) библиотека Python для взаимодействия с Discord API  
-- [discord.ui](https://discordpy.readthedocs.io/en/stable/interactions/api.html#module-discord.ui) модуль для создания кнопок и интерактивных элементов в Discord  
-- [discord.ext](https://discordpy.readthedocs.io/en/stable/ext/commands/index.html) расширение библиотеки `discord.py`, предоставляющее систему команд для создания Discord-ботов  
-- [Tweepy](https://docs.tweepy.org/en/stable/) библиотека Python для работы с Twitter API  
-- [aiohttp](https://pypi.org/project/aiohttp/) библиотека Python для выполнения асинхронных HTTP-запросов, основанная на asyncio. Используется для высокопроизводительного взаимодействия с API, включая работу с Twitter через Tweepy  
-- [async_lru](https://pypi.org/project/async-lru/) асинхронная реализация LRU (Least Recently Used) кэширования для Python-функций. Позволяет кешировать результаты асинхронных вызовов, снижая нагрузку и ускоряя повторные запросы  
-- [oauthlib](https://pypi.org/project/oauthlib/) библиотека Python, реализующая протоколы OAuth 1.0 и OAuth 2.0. Обеспечивает безопасную авторизацию и аутентификацию при работе с API, включая Twitter API через Tweepy  
-- [aiohttp](https://docs.aiohttp.org/en/stable/) асинхронная библиотека Python для работы с HTTP  
-- [asyncio](https://docs.python.org/3/library/asyncio.html) стандартный модуль Python для асинхронного программирования  
-- [requests](https://pypi.org/project/requests/) библиотека Python для выполнения HTTP-запросов  
-- [Pillow](https://pillow.readthedocs.io/en/stable/) библиотека для обработки изображений в Python  
-- [psutil](https://psutil.readthedocs.io/en/latest/) библиотека Python для получения информации о системных ресурсах (CPU, память, диски, сеть) и управления процессами  
-- [schedule](https://schedule.readthedocs.io/en/stable/) библиотека Python для простого планирования периодических задач с помощью понятного синтаксиса  
-- [python-dotenv](https://saurabh-kumar.com/python-dotenv/) библиотека Python для загрузки переменных окружения из файла `.env` в переменные окружения системы  
-- [python-telegram-bot](https://docs.python-telegram-bot.org/) библиотека Python для создания ботов Telegram с поддержкой асинхронности, удобных хендлеров и взаимодействия с Telegram Bot API  
-- [pyTelegramBotAPI](https://pytba.readthedocs.io/en/latest/) простая библиотека Python для создания ботов Telegram с синхронным и удобным API на основе [telebot](https://github.com/eternnoir/pyTelegramBotAPI)  
-- [telebot](https://pypi.org/project/pyTelegramBotAPI/) библиотека Python (часть `pyTelegramBotAPI`) для создания Telegram-ботов  
-- [discord-webhook](https://pypi.org/project/discord-webhook/) простая библиотека Python для отправки сообщений через Discord Webhooks  
-- [word2number](https://pypi.org/project/word2number/) библиотека Python для преобразования чисел, записанных словами (например, "two hundred"), в числовой формат (`200`)  
-- [PyNaCl](https://pynacl.readthedocs.io/) Python-биндинг к библиотеке [NaCl](https://nacl.cr.yp.to/), реализующий современные криптографические функции (например, цифровые подписи, шифрование и т.д.)  
-- [CoinGecko API](https://www.coingecko.com/en/api) бесплатный API для получения информации о криптовалютах  
-- [DeepL API](https://www.deepl.com/docs-api) интерфейс программирования от DeepL для автоматического перевода текста с поддержкой высококачественных переводов  
-- [deepl](https://pypi.org/project/deepl/) официальная библиотека Python для работы с DeepL API — одного из самых качественных сервисов машинного перевода текста  
-- [Google Cloud Translation API](https://cloud.google.com/translate) API от Google для перевода текста. Поддерживает автоматическое определение языка, настройку терминологии и интеграцию в веб- и мобильные приложения
-- [google-cloud-translate](https://cloud.google.com/python/docs/reference/translate/latest) официальная библиотека Python для использования Google Cloud Translation API для автоматического перевода текста  
-- [deep-translator](https://deep-translator.readthedocs.io/en/latest/) универсальная библиотека Python для перевода текста с поддержкой нескольких сервисов, включая Google Translate, DeepL, Microsoft Translator и другие  
-- [langdetect](https://pypi.org/project/langdetect/) библиотека Python для автоматического определения языка текста на основе алгоритмов Google Language Detection  
+| File                     | Purpose                                                              |
+| ------------------------ | -------------------------------------------------------------------- |
+| `acrive_users.json`      | list of active Telegram chat users                                   |
+| `background.jpg`         | background for price image                                           |
+| `morning1-6.jpg`         | backgrounds for "Good morning" image                                 |
+| `night1-6.jpg`           | backgrounds for "Good night" image                                   |
+| `game_zone.jpg`          | background for "Game zone" main menu                                 |
+| `roll.jpg`               | background for `ROLL` submenu                                        |
+| `reroll.jpg`             | background for `REROLL` submenu                                      |
+| `trivia.jpg`             | background for `TRIVIA` submenu                                      |
+| `leaderboard.jpg`        | background for `LEADERBOARD` submenu                                 |
+| `SpicyRice-Regular.ttf`  | custom font for text                                                 |
+| `last_price.txt`         | cache of the latest BTC price (automatically generated)              |
+| `last_tweet.txt`         | cache of the last sent tweet (automatically generated)               |
+| `last_twitter_check.txt` | time of the last successful Twitter check (automatically generated)  |
+| `twitter_block.txt`      | time of the end of the API temporary block (automatically generated) |
+| `logs.log`               | general bot log file (automatically generated)                       |
+| `translate.log`          | translator log file (automatically generated)                        |
+| `trivia_questions.txt`   | questions for the mini-game `TRIVIA`                                 |
+| `scores.json.`           | "Game Zone" leaderboard file (automatically generated)               |
+| `crimson_scores.json`    | "Crimson Envoy" leaderboard file                                     |
+| `message_map.json`       | message mapping file (automatically generated)                       |
+| `.env`                   | token and ID configuration                                           |
+| `google_key.json`        | GoogleCloud Translate API key                                        |
+| `requirements.txt`       | Python dependency list                                               |
 
 ---
 
-## 📷 Скриншоты
+## 🛠️ Technologies Used
+
+- [os](https://docs.python.org/3/library/os.html) built-in Python module for working with the operating system (files, environment variables, processes)
+- [sys](https://docs.python.org/3/library/sys.html) built-in Python module for accessing system parameters and interacting with the interpreter
+- [re](https://docs.python.org/3/library/re.html) built-in Python module for working with regular expressions
+- [time](https://docs.python.org/3/library/time.html) built-in Python module for working with time and delays
+- [uuid](https://docs.python.org/3/library/uuid.html) built-in Python module for generating unique identifiers (UUIDs)
+- [json](https://docs.python.org/3/library/json.html) built-in Python module for encoding and decoding JSON data
+- [random](https://docs.python.org/3/library/random.html) built-in Python module for generating random numbers and samples
+- [logging](https://docs.python.org/3/library/logging.html) built-in Python module for logging applications
+- [threading](https://docs.python.org/3/library/threading.html) built-in Python module for multithreading
+- [tempfile](https://docs.python.org/3/library/tempfile.html) built-in Python module for creating temporary files and directories
+- [datetime](https://docs.python.org/3/library/datetime.html) built-in module Python for working with dates and times
+- [discord.py](https://discordpy.readthedocs.io/en/stable/) Python library for interacting with the Discord API
+- [discord.ui](https://discordpy.readthedocs.io/en/stable/interactions/api.html#module-discord.ui) module for creating buttons and interactive elements in Discord
+- [discord.ext](https://discordpy.readthedocs.io/en/stable/ext/commands/index.html) extension of the `discord.py` library, providing a system of commands for creating Discord bots
+- [Tweepy](https://docs.tweepy.org/en/stable/) Python library for working with the Twitter API
+- [aiohttp](https://pypi.org/project/aiohttp/) Python library for performing asynchronous HTTP requests based on asyncio. Used for high-performance interaction with APIs, including working with Twitter via Tweepy
+- [async_lru](https://pypi.org/project/async-lru/) asynchronous implementation of LRU (Least Recently Used) caching for Python functions. Allows caching the results of asynchronous calls, reducing the load and speeding up repeated requests
+- [oauthlib](https://pypi.org/project/oauthlib/) Python library implementing the OAuth 1.0 and OAuth 2.0 protocols. Provides secure authorization and authentication when working with APIs, including the Twitter API via Tweepy
+- [aiohttp](https://docs.aiohttp.org/en/stable/) an asynchronous Python library for working with HTTP
+- [asyncio](https://docs.python.org/3/library/asyncio.html) a standard Python module for asynchronous programming
+- [requests](https://pypi.org/project/requests/) a Python library for making HTTP requests
+- [Pillow](https://pillow.readthedocs.io/en/stable/) a library for image processing in Python
+- [psutil](https://psutil.readthedocs.io/en/latest/) a Python library for getting information about system resources (CPU, memory, disks, network) and managing processes
+- [schedule](https://schedule.readthedocs.io/en/stable/) a Python library for easily scheduling periodic tasks using clear syntax
+- [python-dotenv](https://saurabh-kumar.com/python-dotenv/) Python library for loading environment variables from `.env` file into system environment variables
+- [python-telegram-bot](https://docs.python-telegram-bot.org/) Python library for creating Telegram bots with support for asynchrony, convenient handlers and interaction with Telegram Bot API
+- [pyTelegramBotAPI](https://pytba.readthedocs.io/en/latest/) simple Python library for creating Telegram bots with synchronous and convenient API based on [telebot](https://github.com/eternnoir/pyTelegramBotAPI)
+- [telebot](https://pypi.org/project/pyTelegramBotAPI/) Python library (part of `pyTelegramBotAPI`) for creating Telegram bots
+- [discord-webhook](https://pypi.org/project/discord-webhook/) simple Python library for sending messages via Discord Webhooks
+- [word2number](https://pypi.org/project/word2number/) Python library for converting numbers written in words (e.g. "two hundred") to numeric format (`200`)
+- [PyNaCl](https://pynacl.readthedocs.io/) Python binding to the [NaCl](https://nacl.cr.yp.to/) library, implementing modern cryptographic functions (e.g. digital signatures, encryption, etc.)
+- [CoinGecko] API](https://www.coingecko.com/en/api) free API for getting information about cryptocurrencies
+- [DeepL API](https://www.deepl.com/docs-api) programming interface from DeepL for automatic text translation with support for high-quality translations
+- [deepl](https://pypi.org/project/deepl/) official Python library for working with DeepL API - one of the highest quality services for machine translation of text
+- [Google Cloud Translation API](https://cloud.google.com/translate) API from Google for text translation. Supports automatic language detection, terminology customization, and integration into web and mobile apps
+- [google-cloud-translate](https://cloud.google.com/python/docs/reference/translate/latest) official Python library for using Google Cloud Translation API for automatic text translation
+- [deep-translator](https://deep-translator.readthedocs.io/en/latest/) universal Python library for text translation with support for several services, including Google Translate, DeepL, Microsoft Translator, and others
+- [langdetect](https://pypi.org/project/langdetect/) Python library for automatic text language detection based on Google Language Detection algorithms
+
+---
+
+## 📷 Screenshots
 
 ![001](https://github.com/user-attachments/assets/92295d29-269f-4f49-b2a4-8e95059fd38c)
 
@@ -488,48 +437,48 @@ DISCORD_AVATAR_URL=your_avatar_url
 
 ---
 
-## 🚀 Запуск
+## 🚀 Launch
 
 ```powershell
 python main.py
 ```
 
-### **Бот начнёт работу и будет:**
+### **The bot will start working and will:**
 
-- каждые 10 минут обновлять название канала в **Discord** с текущей ценой $BTC  
-- каждые 30 минут проверять наличие нового твита для ретрансляции в Discord  
-- отслеживать создание новых "тикетов" и отправлять уведомление в Telegram  
-- каждые 4 часа публиковать изображение с ценой $BTC в **Telegram**  
-- реагировать на обработку слэш-команд:  
-  - **Telegram** `/price`, `/gm`, `/gn`, `/rpdao_game`, `/crimson_board`, `/link`, `/start_roll` / `/roll` / `/stop_roll`, `/reroll_on` / `/reroll` / `/reroll_off`, `/rpdao_trivia` / `/rpdao_trivia_off`, `/score`, `/stop` / `/resume`  
-  - **Discord** `/price`, `/roll`, `/reroll`  
-- автоматически пересылать все сообщений и фото в **Discord** с переводом на английский  
-- автоматически пересылать все сообщений и фото в **Telegram**  
-- мини-игры в **Telegram**: раунды `/roll`, турниры `/reroll` и викторину `/rpdao_trivia`  
-
----
-
-## 🧹 Завершение работы
-
-При завершении скрипта автоматически удаляется `bot.lock`, чтобы **Telegram** бот мог быть перезапущен без конфликтов.
+- every 10 minutes update the channel name in **Discord** with the current price of $BTC
+- every 30 minutes check for a new tweet to relay to Discord
+- monitor the creation of new "tickets" and send a notification to Telegram
+- every 4 hours publish an image with the price of $BTC in **Telegram**
+- react to the processing of slash commands:
+- **Telegram** `/price`, `/gm`, `/gn`, `/rpdao_game`, `/crimson_board`, `/link`, `/start_roll` / `/roll` / `/stop_roll`, `/reroll_on` / `/reroll` / `/reroll_off`, `/rpdao_trivia` / `/rpdao_trivia_off`, `/score`, `/tag`, `/stop` / `/resume`
+- **Discord** `/price`, `/roll`, `/reroll`
+- automatically forward all messages and photos to **Discord** with English translation
+- automatically forward all messages and photos to **Telegram**
+- mini-games in **Telegram**: rounds `/roll`, tournaments `/reroll` and quiz `/rpdao_trivia`
 
 ---
 
-## ⚠️ Примечания
+## 🧹 Shutdown
 
-- Если бот не отвечает - проверь лог `entrypoint.log` или `logs.log`.
-- Убедись, что переменные окружения заданы корректно.
-- Если бот запускается в группе, добавь его как администратора с правами на удаление, закрепление и отправку сообщений и медиа.
+When the script terminates, `bot.lock` is automatically removed so that the **Telegram** bot can be restarted without conflicts.
 
 ---
 
-## 👤 Автор
+## ⚠️ Notes
 
-Создано с ❤️ для [Red Planet DAO](https://linktr.ee/rpdao)  
-Автор: [KOT](https://github.com/KOT0628)
+- If the bot does not respond, check the log `entrypoint.log` or `logs.log`.
+- Make sure the environment variables are set correctly.
+- If the bot is running in a group, add it as an administrator with rights to delete, pin and send messages and media.
 
 ---
 
-## 📝 Лицензия
+## 👤 Author
+
+Created with ❤️ for [Red Planet DAO](https://linktr.ee/rpdao)  
+Author: [KOT](https://github.com/KOT0628)
+
+---
+
+## 📝 License
 
 ©️ RPDAO
