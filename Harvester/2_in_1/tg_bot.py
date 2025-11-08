@@ -19,7 +19,7 @@ from utils import logger
 from utils.scheduler import run_scheduler
 from utils import scoreboard
 
-from features import discord_bridge, gm_gn, price, score, stop_start
+from features import discord_bridge, gm_gn, price, score, stop_start, tag
 from features import game
 from features.game import trivia
 from features.crimson_board import register_crimson_board
@@ -74,12 +74,14 @@ def run_telegram_bot():
     discord_bridge.send_photo(bot)
     gm_gn.set_bot(bot)
     price.set_bot(bot)
+    tag.set_bot(bot)
 
     # Регистрация обработчиков
     game.register_game_handlers(bot)
     trivia.load_trivia_questions()
     gm_gn.register_handlers(bot)
     price.use_price(bot)
+    tag.tag_handlers(bot)
     register_crimson_board(bot)
     register_link_handlers(bot)
 
