@@ -386,6 +386,7 @@ DISCORD_AVATAR_URL=your_avatar_url
 - [oauthlib](https://pypi.org/project/oauthlib/) Python library implementing the OAuth 1.0 and OAuth 2.0 protocols. Provides secure authorization and authentication when working with APIs, including the Twitter API via Tweepy
 - [aiohttp](https://docs.aiohttp.org/en/stable/) an asynchronous Python library for working with HTTP
 - [asyncio](https://docs.python.org/3/library/asyncio.html) a standard Python module for asynchronous programming
+- [colorama](https://pypi.org/project/colorama/?utm_source=chatgpt.com) a Python library that provides support for ANSI escape sequences (for colored text and terminal cursor control) across various operating systems
 - [requests](https://pypi.org/project/requests/) a Python library for making HTTP requests
 - [Pillow](https://pillow.readthedocs.io/en/stable/) a library for image processing in Python
 - [psutil](https://psutil.readthedocs.io/en/latest/) a Python library for getting information about system resources (CPU, memory, disks, network) and managing processes
