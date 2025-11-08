@@ -36,7 +36,7 @@
 This bot will automatically:
 
 - sends a generated image with the current Bitcoin price to [Telegram](https://t.me/rpdao) and [Discord](https://discord.gg/g4b8RsbnNd) **"Red Planet DAO"** every 4 hours;
-- processes slash commands: `/price`, `/roll`, `/reroll`, `/gm`, `/gn`, `/rpdao_game`, `/link`;
+- processes slash commands: `/price`, `/roll`, `/reroll`, `/gm`, `/gn`, `/rpdao_game`, `/start_roll`, `/link`, `/stop`, `/resume`;
 - forwards all messages and images **from Telegram to Discord**, with automatic translation into English;
 - forwards all messages and images **from Discord to Telegram**;
 - supports tweet relaying **from Twitter to Discord**.
@@ -132,6 +132,7 @@ This bot will automatically:
 | `/rpdao_trivia`     | Starts the TRIVIA                            |
 | `/rpdao_trivia_off` | Stops the TRIVIA                             |
 | `/score`            | Opens the Game Zone leaderboard              |
+| `/tag`              | Tags active chat participants from the list  |
 | `/stop`             | Disables slash commands                      |
 | `/resume`           | Enables slash commands                       |
 
@@ -197,6 +198,7 @@ RPDAO-Harvester_v2.0/
 │   ├── price.py                       # Telegram slash command /price
 │   ├── score.py                       # Game Leaderboard logic
 │   ├── stop_start.py                  # Disabling/enabling the use of slash commands
+│   ├── tag.py                         # Tag active users in chat
 │   ├── telegram_bridge.py             # Forwarding messages and photos in Telegram
 │   ├── ticket_notify.py               # Processing the creation of a new channel with a "ticket"
 │   └── tweets.py                      # Relaying tweets from Twitter to Discord
@@ -226,6 +228,7 @@ RPDAO-Harvester_v2.0/
 │   │   ├── last_price.txt             # Latest Price $BTC
 │   │   └── message_map.json           # Message mapping file
 │   ├── game/
+│   │   ├── active_users.json          # List of active chat users
 │   │   └── trivia_questions.txt       # Quiz questions
 │   ├── img_output/
 │   │   ├── btc_price_output.jpg       # Generated image with $BTC price
@@ -335,6 +338,7 @@ DISCORD_AVATAR_URL=your_avatar_url
 
 | File                     | Purpose                                                              |
 | ------------------------ | -------------------------------------------------------------------- |
+| `acrive_users.json`      | list of active Telegram chat users                                   |
 | `background.jpg`         | background for price image                                           |
 | `morning1-6.jpg`         | backgrounds for "Good morning" image                                 |
 | `night1-6.jpg`           | backgrounds for "Good night" image                                   |
@@ -446,7 +450,7 @@ python main.py
 - monitor the creation of new "tickets" and send a notification to Telegram
 - every 4 hours publish an image with the price of $BTC in **Telegram**
 - react to the processing of slash commands:
-- **Telegram** `/price`, `/gm`, `/gn`, `/rpdao_game`, `/crimson_board`, `/link`, `/start_roll` / `/roll` / `/stop_roll`, `/reroll_on` / `/reroll` / `/reroll_off`, `/rpdao_trivia` / `/rpdao_trivia_off`, `/score`, `/stop` / `/resume`
+- **Telegram** `/price`, `/gm`, `/gn`, `/rpdao_game`, `/crimson_board`, `/link`, `/start_roll` / `/roll` / `/stop_roll`, `/reroll_on` / `/reroll` / `/reroll_off`, `/rpdao_trivia` / `/rpdao_trivia_off`, `/score`, `/tag`, `/stop` / `/resume`
 - **Discord** `/price`, `/roll`, `/reroll`
 - automatically forward all messages and photos to **Discord** with English translation
 - automatically forward all messages and photos to **Telegram**
