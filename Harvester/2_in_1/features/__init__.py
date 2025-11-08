@@ -30,6 +30,8 @@ from .score import register_handlers
 
 from .stop_start import stop_start_handlers
 
+from .tag import tag_handlers
+
 from .telegram_bridge import register_tg_bridge_command
 
 from .ticket_notify import on_guild_channel_create
