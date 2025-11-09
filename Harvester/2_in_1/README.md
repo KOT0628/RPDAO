@@ -366,45 +366,45 @@ DISCORD_AVATAR_URL=your_avatar_url
 
 ## 🛠️ Technologies Used
 
-- [os](https://docs.python.org/3/library/os.html) built-in Python module for working with the operating system (files, environment variables, processes)
-- [sys](https://docs.python.org/3/library/sys.html) built-in Python module for accessing system parameters and interacting with the interpreter
-- [re](https://docs.python.org/3/library/re.html) built-in Python module for working with regular expressions
-- [time](https://docs.python.org/3/library/time.html) built-in Python module for working with time and delays
-- [uuid](https://docs.python.org/3/library/uuid.html) built-in Python module for generating unique identifiers (UUIDs)
-- [json](https://docs.python.org/3/library/json.html) built-in Python module for encoding and decoding JSON data
-- [random](https://docs.python.org/3/library/random.html) built-in Python module for generating random numbers and samples
-- [logging](https://docs.python.org/3/library/logging.html) built-in Python module for logging applications
-- [threading](https://docs.python.org/3/library/threading.html) built-in Python module for multithreading
-- [tempfile](https://docs.python.org/3/library/tempfile.html) built-in Python module for creating temporary files and directories
-- [datetime](https://docs.python.org/3/library/datetime.html) built-in module Python for working with dates and times
-- [discord.py](https://discordpy.readthedocs.io/en/stable/) Python library for interacting with the Discord API
-- [discord.ui](https://discordpy.readthedocs.io/en/stable/interactions/api.html#module-discord.ui) module for creating buttons and interactive elements in Discord
-- [discord.ext](https://discordpy.readthedocs.io/en/stable/ext/commands/index.html) extension of the `discord.py` library, providing a system of commands for creating Discord bots
-- [Tweepy](https://docs.tweepy.org/en/stable/) Python library for working with the Twitter API
-- [aiohttp](https://pypi.org/project/aiohttp/) Python library for performing asynchronous HTTP requests based on asyncio. Used for high-performance interaction with APIs, including working with Twitter via Tweepy
-- [async_lru](https://pypi.org/project/async-lru/) asynchronous implementation of LRU (Least Recently Used) caching for Python functions. Allows caching the results of asynchronous calls, reducing the load and speeding up repeated requests
-- [oauthlib](https://pypi.org/project/oauthlib/) Python library implementing the OAuth 1.0 and OAuth 2.0 protocols. Provides secure authorization and authentication when working with APIs, including the Twitter API via Tweepy
-- [aiohttp](https://docs.aiohttp.org/en/stable/) an asynchronous Python library for working with HTTP
-- [asyncio](https://docs.python.org/3/library/asyncio.html) a standard Python module for asynchronous programming
-- [colorama](https://pypi.org/project/colorama/?utm_source=chatgpt.com) a Python library that provides support for ANSI escape sequences (for colored text and terminal cursor control) across various operating systems
-- [requests](https://pypi.org/project/requests/) a Python library for making HTTP requests
-- [Pillow](https://pillow.readthedocs.io/en/stable/) a library for image processing in Python
-- [psutil](https://psutil.readthedocs.io/en/latest/) a Python library for getting information about system resources (CPU, memory, disks, network) and managing processes
-- [schedule](https://schedule.readthedocs.io/en/stable/) a Python library for easily scheduling periodic tasks using clear syntax
-- [python-dotenv](https://saurabh-kumar.com/python-dotenv/) Python library for loading environment variables from `.env` file into system environment variables
-- [python-telegram-bot](https://docs.python-telegram-bot.org/) Python library for creating Telegram bots with support for asynchrony, convenient handlers and interaction with Telegram Bot API
-- [pyTelegramBotAPI](https://pytba.readthedocs.io/en/latest/) simple Python library for creating Telegram bots with synchronous and convenient API based on [telebot](https://github.com/eternnoir/pyTelegramBotAPI)
-- [telebot](https://pypi.org/project/pyTelegramBotAPI/) Python library (part of `pyTelegramBotAPI`) for creating Telegram bots
-- [discord-webhook](https://pypi.org/project/discord-webhook/) simple Python library for sending messages via Discord Webhooks
-- [word2number](https://pypi.org/project/word2number/) Python library for converting numbers written in words (e.g. "two hundred") to numeric format (`200`)
-- [PyNaCl](https://pynacl.readthedocs.io/) Python binding to the [NaCl](https://nacl.cr.yp.to/) library, implementing modern cryptographic functions (e.g. digital signatures, encryption, etc.)
-- [CoinGecko] API](https://www.coingecko.com/en/api) free API for getting information about cryptocurrencies
-- [DeepL API](https://www.deepl.com/docs-api) programming interface from DeepL for automatic text translation with support for high-quality translations
-- [deepl](https://pypi.org/project/deepl/) official Python library for working with DeepL API - one of the highest quality services for machine translation of text
-- [Google Cloud Translation API](https://cloud.google.com/translate) API from Google for text translation. Supports automatic language detection, terminology customization, and integration into web and mobile apps
-- [google-cloud-translate](https://cloud.google.com/python/docs/reference/translate/latest) official Python library for using Google Cloud Translation API for automatic text translation
-- [deep-translator](https://deep-translator.readthedocs.io/en/latest/) universal Python library for text translation with support for several services, including Google Translate, DeepL, Microsoft Translator, and others
-- [langdetect](https://pypi.org/project/langdetect/) Python library for automatic text language detection based on Google Language Detection algorithms
+- [datetime](https://docs.python.org/3/library/datetime.html) built-in module Python for working with dates and times  
+- [json](https://docs.python.org/3/library/json.html) built-in Python module for encoding and decoding JSON data  
+- [logging](https://docs.python.org/3/library/logging.html) built-in Python module for logging applications  
+- [os](https://docs.python.org/3/library/os.html) built-in Python module for working with the operating system (files, environment variables, processes)  
+- [random](https://docs.python.org/3/library/random.html) built-in Python module for generating random numbers and samples  
+- [re](https://docs.python.org/3/library/re.html) built-in Python module for working with regular expressions  
+- [sys](https://docs.python.org/3/library/sys.html) built-in Python module for accessing system parameters and interacting with the interpreter  
+- [tempfile](https://docs.python.org/3/library/tempfile.html) built-in Python module for creating temporary files and directories  
+- [threading](https://docs.python.org/3/library/threading.html) built-in Python module for multithreading  
+- [time](https://docs.python.org/3/library/time.html) built-in Python module for working with time and delays  
+- [uuid](https://docs.python.org/3/library/uuid.html) built-in Python module for generating unique identifiers (UUIDs)  
+- [aiohttp](https://pypi.org/project/aiohttp/) a Python library for making asynchronous HTTP requests, based on asyncio. It is used for high-performance API interaction, including working with Twitter via Tweepy  
+- [asyncio](https://docs.python.org/3/library/asyncio.html) a standard Python module for asynchronous programming  
+- [colorama](https://pypi.org/project/colorama/?utm_source=chatgpt.com) a Python library that provides support for ANSI escape sequences (for colored text and terminal cursor control) across various operating systems  
+- [discord.py](https://discordpy.readthedocs.io/en/stable/) Python library for interacting with the Discord API  
+- [discord-webhook](https://pypi.org/project/discord-webhook/) simple Python library for sending messages via Discord Webhooks  
+- [langdetect](https://pypi.org/project/langdetect/) Python library for automatic text language detection based on Google Language Detection algorithms  
+- [oauthlib](https://pypi.org/project/oauthlib/) Python library implementing the OAuth 1.0 and OAuth 2.0 protocols. Provides secure authorization and authentication when working with APIs, including the Twitter API via Tweepy  
+- [pyTelegramBotAPI](https://pytba.readthedocs.io/en/latest/) simple Python library for creating Telegram bots with synchronous and convenient API based on [telebot](https://github.com/eternnoir/pyTelegramBotAPI)  
+- [python-dotenv](https://saurabh-kumar.com/python-dotenv/) Python library for loading environment variables from `.env` file into system environment variables  
+- [python-telegram-bot](https://docs.python-telegram-bot.org/) Python library for creating Telegram bots with support for asynchrony, convenient handlers and interaction with Telegram Bot API  
+- [pytz](https://pypi.org/project/pytz/) a Python library for working with time zones. It provides accurate time zone data from the IANA (tz database) and allows for accurate time conversion between different time zones  
+- [psutil](https://psutil.readthedocs.io/en/latest/) a Python library for getting information about system resources (CPU, memory, disks, network) and managing processes  
+- [requests](https://pypi.org/project/requests/) a Python library for making HTTP requests  
+- [schedule](https://schedule.readthedocs.io/en/stable/) a Python library for easily scheduling periodic tasks using clear syntax  
+- [telebot](https://pypi.org/project/pyTelegramBotAPI/) Python library (part of `pyTelegramBotAPI`) for creating Telegram bots  
+- [Tweepy](https://docs.tweepy.org/en/stable/) Python library for working with the Twitter API  
+- [word2number](https://pypi.org/project/word2number/) Python library for converting numbers written in words (e.g. "two hundred") to numeric format (`200`)  
+- [Pillow](https://pillow.readthedocs.io/en/stable/) a library for image processing in Python  
+- [PyNaCl](https://pynacl.readthedocs.io/) Python binding to the [NaCl](https://nacl.cr.yp.to/) library, implementing modern cryptographic functions (e.g. digital signatures, encryption, etc.)  
+- [async_lru](https://pypi.org/project/async-lru/) asynchronous implementation of LRU (Least Recently Used) caching for Python functions. Allows caching the results of asynchronous calls, reducing the load and speeding up repeated requests  
+- [discord.ext](https://discordpy.readthedocs.io/en/stable/ext/commands/index.html) extension of the `discord.py` library, providing a system of commands for creating Discord bots  
+- [discord.ui](https://discordpy.readthedocs.io/en/stable/interactions/api.html#module-discord.ui) module for creating buttons and interactive elements in Discord  
+- [CoinGecko API](https://www.coingecko.com/en/api) free API for getting information about cryptocurrencies  
+- [DeepL API](https://www.deepl.com/docs-api) programming interface from DeepL for automatic text translation with support for high-quality translations  
+- [deepl](https://pypi.org/project/deepl/) official Python library for working with DeepL API - one of the highest quality services for machine translation of text  
+- [deep-translator](https://deep-translator.readthedocs.io/en/latest/) universal Python library for text translation with support for several services, including Google Translate, DeepL, Microsoft Translator, and others  
+- [google-cloud-translate](https://cloud.google.com/python/docs/reference/translate/latest) official Python library for using Google Cloud Translation API for automatic text translation  
+- [Google Cloud Translation API](https://cloud.google.com/translate) API from Google for text translation. Supports automatic language detection, terminology customization, and integration into web and mobile apps  
 
 ---
 
