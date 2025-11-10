@@ -1,3 +1,5 @@
+from .blackjack_logger import get_blackjack_logger
+
 from .check_admin import admin_only
 
 from .dc_helpers import (
@@ -36,11 +38,13 @@ from .scoreboard import (
     save_scores,
     add_point,
     add_point_trivia,
+    add_point_blackjack,
     user_score_pages,
     scores,
     points,
     show_score_page,
     handle_score_pagination,
+    load_scores,
 )
 
 from .translate import translate_smart
