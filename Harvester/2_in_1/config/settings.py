@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 # === РАБОТА С ФАЙЛАМИ ===
 # == Game Zone Images ==
+BLACKJACK_IMAGE = "assets/blackjack.png"
 GAME_IMAGE = "assets/game_zone.jpg"
 ROLL_IMAGE = "assets/roll.jpg"
 REROLL_IMAGE = "assets/reroll.jpg"
