@@ -103,6 +103,21 @@ def add_point_trivia(user_id, scores, user_obj=None):
 
     save_scores(scores)
 
+# == Начисление очков в BlackJack ==
+def add_point_blackjack(user_id, name, scores, delta):
+    if not user_id:
+        return None
+
+    # Конвертируем имя пользователя
+    user_id = str(user_id)
+    if user_id not in scores:
+        scores[user_id] = {"name": name, "points": 0}
+
+    # Обновляем очки
+    scores[user_id]["points"] += delta
+
+    return scores[user_id]["points"]
+
 # === ФОРМИРОВАНИЕ ОТОБРАЕНИЯ ТАБЛИЦЫ ЛИДЕРОВ ===
 # == Показ страницы лидерборда ==
 
