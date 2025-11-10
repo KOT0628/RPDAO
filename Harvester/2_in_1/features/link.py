@@ -6,6 +6,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config.settings import (
     LINK_IMAGE,
     WEB_URL,
+    RP_DNA,
     X_URL,
     DC_URL, 
     TG_URL,
