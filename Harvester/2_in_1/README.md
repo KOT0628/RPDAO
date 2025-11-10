@@ -55,6 +55,13 @@ This bot will automatically:
   - 🧠 quiz `TRIVIA` with automatic hints and two game modes:
     - **Random mode** - a question comes 30-90 minutes after the previous correct answer.
     - **Fixed mode** - a strict 60-second interval between rounds.
+  - 🃏 mini-game `BlackJack`, using `/blackjack`:
+    - 👥 supports 2 players or playing with a bot
+	- 🤖 the dealer (bot) draws cards up to 17 points
+	- 🎯 support for the `➕ Hit”=` / `✋ Stand` buttons
+	- ⚖️ automatic scoring, bust, draw
+	- 🏆 automatically add +5 / -5 $LEG to the leaderboard
+	- 🧹 auto-clear `state active_games[chat_id]` after completion
   - 🏆 View leaderboard (with page navigation):
     - 📤 in general chat
     - 📬 in private messages
@@ -125,6 +132,7 @@ This bot will automatically:
 | `/rpdao_game`       | Opens the "Game Zone" menu                   |
 | `/crimson_board`    | Opens the Crimson Envoy leaderboard          |
 | `/link`             | Sends links to social-media                  |
+| `/blackjack`        | Launches the "BlackJack" mini-game           |
 | `/start_roll`       | Starts the "ROLL" tournament mode            |
 | `/stop_roll`        | Stops the "ROLL" tournament mode             |
 | `/reroll_on`        | Starts the Rock, Paper, Scissors minigame    |
@@ -166,6 +174,7 @@ RPDAO-Harvester_v2.0/
 │
 ├── utils/                             # Auxiliary functions
 │   ├── __init__.py
+│   ├── blackjack_logger.py            # Setting up "BlackJack" game logging
 │   ├── check_admin.py                 # Checking administrator rights
 │   ├── dc_helpers.py                  # Screening, saving the last tweet, etc.
 │   ├── helpers.py                     # Screening, deleting messages, etc.
@@ -180,7 +189,14 @@ RPDAO-Harvester_v2.0/
 │
 ├── features/                          # Main functionality
 │   ├── game/                          # Red Planet DAO chat mini games
+│   │   ├── blackjack/
+│   │   │   ├── __init__.py
+│   │   │   ├── blackjack.py           # "BlackJack" game logic (deal, points, win)
+│   │   │   ├── game_state.py          # "BlackJack" game status module by chat_id
+│   │   │   └── views.py               # "BlackJack" game control buttons
+
 │   │   ├── __init__.py 
+│   │   ├── blackjack_handlers.py      # "BlackJack" game command module
 │   │   ├── dc_reroll.py               # Discord slash command /reroll
 │   │   ├── dc_roll.py                 # Discord slash command /reroll
 │   │   ├── game_menu.py               # Game menu module
@@ -216,6 +232,7 @@ RPDAO-Harvester_v2.0/
 │   │   └── background.jpg             # Background for /price
 │   ├── fonts/
 │   │   └── SpicyRice-Regular.ttf      # Font
+│   ├── blackjack.png                  # Background of the submenu "Game zone"
 │   ├── game_zone.jpg                  # Background for the main menu of the "Game Zone"
 │   ├── leaderboard.jpg                # Background of the submenu "Game zone"
 │   ├── link.png                       # Background for social media links menu
@@ -238,6 +255,13 @@ RPDAO-Harvester_v2.0/
 │   │   ├── crimson_scores.json        # Crimson Envoy Leaderboard
 │   │   └── scores.json                # "Game Zone" Leaderboard
 │   ├── logs/
+│   │   ├── blackjack/                 # "BlackJack" game log files, rotated by chat
+│   │   │   ├── chat_id_1/
+│   │   │   │    ├── date_1.log
+│   │   │   ├── chat_id_2/
+│   │   │   │    ├── date_1.log
+│   │   │   ├── chat_id_3/
+│   │   │   │    ├── date_1.log
 │   │   ├── logs.log                   # Log file
 │   │   └── translate.log              # Translator log file
 │   ├── secrets/
@@ -258,9 +282,11 @@ pip install -r requirements.txt
 
 Contents of `requirements.txt`:
 ```
+colorama==0.4.6
 Pillow==10.4.0
 psutil==5.9.8
 python-dotenv==1.0.1
+pytz==2024.2
 requests==2.31.0
 schedule==1.2.1
 word2number==1.1
@@ -342,6 +368,7 @@ DISCORD_AVATAR_URL=your_avatar_url
 | `background.jpg`         | background for price image                                           |
 | `morning1-6.jpg`         | backgrounds for "Good morning" image                                 |
 | `night1-6.jpg`           | backgrounds for "Good night" image                                   |
+| `blackjack.png`          | background for `BLACKJACK` submenu                                   |
 | `game_zone.jpg`          | background for "Game zone" main menu                                 |
 | `roll.jpg`               | background for `ROLL` submenu                                        |
 | `reroll.jpg`             | background for `REROLL` submenu                                      |
@@ -354,6 +381,7 @@ DISCORD_AVATAR_URL=your_avatar_url
 | `twitter_block.txt`      | time of the end of the API temporary block (automatically generated) |
 | `logs.log`               | general bot log file (automatically generated)                       |
 | `translate.log`          | translator log file (automatically generated)                        |
+| `current_date.log`       | "BlackJack" game log file (created automatically)                    |
 | `trivia_questions.txt`   | questions for the mini-game `TRIVIA`                                 |
 | `scores.json.`           | "Game Zone" leaderboard file (automatically generated)               |
 | `crimson_scores.json`    | "Crimson Envoy" leaderboard file                                     |
@@ -451,11 +479,11 @@ python main.py
 - monitor the creation of new "tickets" and send a notification to Telegram
 - every 4 hours publish an image with the price of $BTC in **Telegram**
 - react to the processing of slash commands:
-- **Telegram** `/price`, `/gm`, `/gn`, `/rpdao_game`, `/crimson_board`, `/link`, `/start_roll` / `/roll` / `/stop_roll`, `/reroll_on` / `/reroll` / `/reroll_off`, `/rpdao_trivia` / `/rpdao_trivia_off`, `/score`, `/tag`, `/stop` / `/resume`
+- **Telegram** `/price`, `/gm`, `/gn`, `/rpdao_game`, `/crimson_board`, `/link`, `/blackjack`, `/start_roll` \ `/roll` \ `/stop_roll`, `/reroll_on` \ `/reroll` \ `/reroll_off`, `/rpdao_trivia` \ `/rpdao_trivia_off`, `/score`, `/tag`, `/stop` \ `/resume`
 - **Discord** `/price`, `/roll`, `/reroll`
 - automatically forward all messages and photos to **Discord** with English translation
 - automatically forward all messages and photos to **Telegram**
-- mini-games in **Telegram**: rounds `/roll`, tournaments `/reroll` and quiz `/rpdao_trivia`
+- mini-games in **Telegram**: `BlackJack`, rounds `/roll`, tournaments `/reroll` and quiz `/rpdao_trivia`
 
 ---
 
