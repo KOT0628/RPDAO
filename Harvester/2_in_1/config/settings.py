@@ -17,6 +17,7 @@ LEADERBOARD_IMAGE = "assets/leaderboard.jpg"
 # == Оффициальные ссылки RPDAO ==
 LINK_IMAGE = "assets/link.png"
 WEB_URL = "https://linktr.ee/rpdao"
+RP_DNA = "https://redplanetdna.com/"
 X_URL = "https://x.com/Red_Planet_Dao"
 DC_URL = "https://discord.gg/g4b8RsbnNd"
 TG_URL = "https://t.me/rpdao"
